@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Lusitana&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="styles.css">	
+<title>Initiative</title>
+</head>
+
+<body>
+   <div class="initiative">
+        <div class="combatant pc" id = "combatant1">
+            <h2 id="combatant1_name" class="name" >PC Name</h2>
+            <div class="initiative-roll" >
+				<p id="roll1" contentEditable="true"></p>
+			</div>
+        </div>
+	   
+        <div class="combatant npc"  id = "combatant2">
+            <h2 class="name" id="combatant2_name">NPC Name</h2>
+              <div class="modifier">
+				<p>-1</p>
+			</div>
+          <div class="initiative-roll">
+				<p id="roll2" contentEditable="true"></p>
+			</div>
+        </div>
+	   
+        <div class="combatant monster"  id = "combatant3">
+            <h2 class="name" id="combatant3_name">Monster</h2>
+             <div class="modifier">
+				<p>-1</p>
+			</div> 
+			<div class="initiative-roll">
+				<p id="roll3" contentEditable="true"></p>
+			</div>
+       </div>
+    </div>
+	
+	<div class="buttons">
+		<button id="roller" name="roller">Roll Initiative</button>
+    	<button id="sort" name="sort">Sort</button>
+		
+		<!--<button id="testButton">Test Button</button>-->
+
+	</div>
+	
+	
+	
+	
+<script defer src="script.js"></script>
+</body>
+</html>

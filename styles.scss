@@ -1,0 +1,104 @@
+/* Scss Document */
+@import "normalize.css";
+
+$dark-grey: #151515;
+
+body {
+		font-family: 'Bree Serif', serif;
+}
+
+h2 {
+	//font-family: 'Lusitana', serif;
+	font-size: 2rem;
+	color: $dark-grey;
+	//letter-spacing: 0.03em;
+	font-weight: Bold;
+}
+
+.initiative {
+	display: flex;
+	//grid-table-columns: 1;
+	//grid-table-rows: 3;
+	width: 50%;
+	flex-direction: column;
+	margin: auto;
+}
+
+.buttons {
+	width: 20rem;
+	margin: 2rem auto;
+}
+
+
+.initiative :nth-child(1) { order: 3; }
+.initiative :nth-child(2) { order: 2; }
+.initiative :nth-child(3) { order: 1; }
+
+//  reset order in child of initiative
+.combatant :nth-child(1) {order: 1}
+.combatant :nth-child(2) {order: 2}
+.combatant :nth-child(3) {order: 3}
+
+
+/*.initiative #combatant1 { order: 2; }
+.initiative #combatant2 { order: 3; }
+.initiative #combatant3 { order: 1; }
+*/
+.combatant {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 1rem;
+	padding: .75rem;
+	border-radius: .5rem;
+	border-width: 1px;
+	border-style: solid;
+	border-color: $dark-grey;
+	background-color: lightgrey;
+	
+	h2 {
+		margin: .5rem;
+	}
+	
+	.initiative-roll p {
+		width: 2.2rem;
+		background-color: black;
+        color: white;
+		padding: 1rem;
+		font-size: 2rem;
+        margin: 0;
+		text-align: right;
+	}
+}
+
+
+
+.pc {
+	border-color: silver;
+	background-color: white;
+}
+
+.monster {
+	background-color: lightgreen;
+}
+
+
+button {
+	font-family: 'Bree Serif', serif;
+	font-size: 1em;
+	padding: 1em 2em;
+	background-color: orange;
+	border: none;
+}
+
+#sort {
+	background-color: black;
+    color: white;
+}
+
+#test-button {
+	margin:2rem;
+	padding: 1rem;
+	background-color: pink;
+	
+}
