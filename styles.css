@@ -12,8 +12,10 @@ h2 {
 
 #initiative-box {
   width: 50%;
+  height: 400px;
   margin: auto;
   position: relative;
+  background-color: pink;
 }
 
 .buttons {
@@ -34,6 +36,7 @@ h2 {
 
 */
 .combatant {
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,19 +73,16 @@ h2 {
 #combatant1 {
   position: absolute;
   top: 0px;
-  left: -100px;
 }
 
 #combatant2 {
   position: absolute;
   top: 101px;
-  left: -100px;
 }
 
 #combatant3 {
   position: absolute;
   top: 202px;
-  left: -100px;
 }
 
 button {
