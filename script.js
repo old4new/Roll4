@@ -11,9 +11,10 @@ let rollBox1 = document.getElementById('roll1');
 let rollBox2 = document.getElementById('roll2');
 let rollBox3 = document.getElementById('roll3');
 
-let combatant1Div = document.getElementById('combatant1');
-let combatant2Div = document.getElementById('combatant2');
-let combatant3Div = document.getElementById('combatant3');
+//let combatant1Div = document.getElementById('combatant1');
+//let combatant2Div = document.getElementById('combatant2');
+//let combatant3Div = document.getElementById('combatant3');
+let combatantDivs = document.getElementsByClassName('combatant');
 
 //let nameBox1 = document.getElementById('combatant1_name');
 let nameBox2 = document.getElementById('combatant2_name');
@@ -63,7 +64,16 @@ let initiativeBox = document.getElementById('initiative-box');
 //var combatants = [combatant1, combatant2, combatant3];
 
 
-
+function setInitiativeBox () {
+	var boxH = 0;
+	for (var i=0; i<combatantDivs.length; i++){
+		boxH += combatantDivs[i].offsetHeight;
+		console.log(boxH);
+	}
+	boxH = boxH + (combatantDivs.length * 20) + "px";
+	
+	return boxH;
+}
 
 
 
@@ -75,7 +85,11 @@ function setUp () {
 	for (it = 0; it < combatants.length; it++){
 		combatants[it].nameBox.innerText = combatants[it].name; // write the name
 		// write the initiative modifier
+		//alert(setInitiativeBox);
+	
 	}
+	let iBox = setInitiativeBox();
+	initiativeBox.style.height = iBox;
 }
 
 window.onload = setUp;
@@ -114,7 +128,7 @@ function rollInitiative () {
 }
 
 function quickTest () {
-	console.log(combatants[0].nameBox.parentElement);
+	console.log(combatantDivs);
 }
 
 
