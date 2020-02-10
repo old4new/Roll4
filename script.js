@@ -1,5 +1,6 @@
 // JavaScript Document
 
+
 const rollButton = document.getElementById('roller');
 
 const sortButton = document.getElementById('sort');
@@ -14,51 +15,52 @@ let combatant1Div = document.getElementById('combatant1');
 let combatant2Div = document.getElementById('combatant2');
 let combatant3Div = document.getElementById('combatant3');
 
-let nameBox1 = document.getElementById('combatant1_name');
+//let nameBox1 = document.getElementById('combatant1_name');
 let nameBox2 = document.getElementById('combatant2_name');
 let nameBox3 = document.getElementById('combatant3_name');
 
-
-//var rollBoxArr = [rollBox1, rollBox2, rollBox3];
-//var orderArr = [];
+let initiativeBox = document.getElementById('initiative-box');
 
 
- const combatant1 = {
-	nature: "monster",
-    name: "Orc1",
-	monsterType: "Orc",
-	maxHitPoints: 14,
-	initModifier: 2,
-	armour: 14,
-	initiative: 10,
-	nameBox: nameBox1,
-	rollBox: rollBox1
-};
-
-const combatant2 = {
-	name: "Ziggy",
-	nature: "pc",
-	maxHitPoints: 12,
-	initModifier: 2,
-	armour: 16,
-	initiative: 10,
-	nameBox: nameBox2,
-	rollBox: rollBox2
-};
-
-const combatant3 = {
-	name: "Orvex",
-	nature: "npc",
-	maxHitPoints: 13,
-	initModifier: -1,
-	armour: 12,
-	initiative: 10,
-	nameBox: nameBox3,
-	rollBox: rollBox3
-}
 
 
-var combatants = [combatant1, combatant2, combatant3];
+
+ let combatants = [
+	{
+		nature: "monster",
+		name: "Orc1",
+		monsterType: "Orc",
+		maxHitPoints: 14,
+		initModifier: 2,
+		armour: 14,
+		initiative: 10,
+		nameBox: document.getElementById('combatant1_name'),
+		rollBox: rollBox1
+	},
+	{
+		name: "Ziggy",
+		nature: "pc",
+		maxHitPoints: 12,
+		initModifier: 2,
+		armour: 16,
+		initiative: 10,
+		nameBox: document.getElementById('combatant2_name'),
+		rollBox: rollBox2
+	},
+	{
+		name: "Orvex",
+		nature: "npc",
+		maxHitPoints: 13,
+		initModifier: -1,
+		armour: 12,
+		initiative: 10,
+		nameBox: document.getElementById('combatant3_name'),
+		rollBox: rollBox3
+	}
+]
+
+
+//var combatants = [combatant1, combatant2, combatant3];
 
 
 
@@ -69,11 +71,9 @@ var combatants = [combatant1, combatant2, combatant3];
 
 
 function setUp () {
-	//alert (combatants.length);
 	var it;
 	for (it = 0; it < combatants.length; it++){
-		combatants[it].nameBox.innerHTML = combatants[it].name; // write the name
-		//alert (combatants[it].name);
+		combatants[it].nameBox.innerText = combatants[it].name; // write the name
 		// write the initiative modifier
 	}
 }
@@ -84,6 +84,11 @@ window.onload = setUp;
 function sortCombatOrder(){
 	combatants.sort((a, b) => b.initiative - a.initiative);
 	console.log(combatants);
+	for ( var i = 0; i< combatants.length; i++){
+		var pos = i * 110 +"px";
+		combatants[i].nameBox.parentElement.style.top = pos;
+		console.log(combatants[i].nameBox.parentElement);
+	}
 
 }
 
@@ -97,9 +102,8 @@ function rolld20 () {
 }
 
 function rollInitiative () {
-	var i=0;
 	//orderArr = [];
-	for ( i = 0; i < combatants.length; i++){
+	for ( var i = 0; i < combatants.length; i++){
 		// if not a pc
 		var roll = rolld20(); // roll d20
 		combatants[i].initiative = roll+combatants[i].initModifier;
@@ -109,8 +113,8 @@ function rollInitiative () {
 	//return  orderArr ;
 }
 
-function quicktest () {
-	alert(combatants[0].initiative);
+function quickTest () {
+	console.log(combatants[0].nameBox.parentElement);
 }
 
 
@@ -118,9 +122,8 @@ rollButton.addEventListener( "click", rollInitiative );
 
 sortButton.addEventListener("click", function () { sortCombatOrder() });
 
-//testButton.addEventListener("click", setUp);
+testButton.addEventListener("click", quickTest);
 
 
 
 
-//sortButton.addEventListener("click", function () {alert (orderArr)});

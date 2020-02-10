@@ -8,20 +8,19 @@ body {
 }
 
 h2 {
-	//font-family: 'Lusitana', serif;
 	font-size: 2rem;
 	color: $dark-grey;
 	//letter-spacing: 0.03em;
 	font-weight: Bold;
 }
 
-.initiative {
-	display: flex;
-	//grid-table-columns: 1;
-	//grid-table-rows: 3;
+#initiative-box {
+	//display: flex;
 	width: 50%;
-	flex-direction: column;
+	//flex-direction: column;
 	margin: auto;
+	position: relative;
+	
 }
 
 .buttons {
@@ -29,22 +28,23 @@ h2 {
 	margin: 2rem auto;
 }
 
+/*
+#initiative-box :nth-child(1) { order: 3; };
+#initiative-box :nth-child(2) { order: 2; };
+#initiative-box :nth-child(3) { order: 1; };
 
-.initiative :nth-child(1) { order: 3; }
-.initiative :nth-child(2) { order: 2; }
-.initiative :nth-child(3) { order: 1; }
+//  reset order in child of initiative-box
 
-//  reset order in child of initiative
 .combatant :nth-child(1) {order: 1}
 .combatant :nth-child(2) {order: 2}
 .combatant :nth-child(3) {order: 3}
 
-
-/*.initiative #combatant1 { order: 2; }
-.initiative #combatant2 { order: 3; }
-.initiative #combatant3 { order: 1; }
 */
+
+
+
 .combatant {
+	//position: absolute;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -71,15 +71,29 @@ h2 {
 	}
 }
 
-
+#combatant1 {
+	position: absolute;
+	top: 0px;
+	left: -200px;
+}
+#combatant2 {
+	position: absolute;
+	top: 101px;
+	left: -400px;
+	
+}
+#combatant3 {
+	position: absolute;
+	top: 202px;
+}
 
 .pc {
-	border-color: silver;
-	background-color: white;
+	//border-color: silver;
+	//background-color: white;
 }
 
 .monster {
-	background-color: lightgreen;
+	//background-color: lightgreen;
 }
 
 
