@@ -56,7 +56,7 @@ h4 {
   margin: .5rem;
 }
 
-.combatant .initiative-roll p {
+.combatant p.roll {
   width: 1.2rem;
   background-color: black;
   color: white;
