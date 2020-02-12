@@ -124,12 +124,35 @@ function quickTest () {
 	console.log(rollBoxArr);
 }
 
+function addThing () {
+	let newCombBox = document.createElement('div');
+	newCombBox.className = "combatant";
+	let newName = document.createElement('h4');
+	newName.className = "name";
+	newName.appendChild(document.createTextNode('Varis'));
+	let newIntBox = document.createElement('p');
+	newIntBox.className ="roll";
+	newIntBox.appendChild(document.createTextNode(''));
+	newCombBox.appendChild(newName);
+	newCombBox.appendChild(newIntBox);
+
+	console.log(newCombBox);
+	initiativeBox.appendChild(newCombBox);
+
+	// for testing, hide the existing combatants 
+	// for (var i=0; i < combatants.length; i++) {
+	// 	combatants[i].comBox.style.visibility = "hidden";
+	// }
+
+	
+}
+
 
 rollButton.addEventListener( "click", rollInitiative );
 
 sortButton.addEventListener("click", function () { sortCombatOrder() });
 
-testButton.addEventListener("click", quickTest);
+testButton.addEventListener("click", addThing);
 
 
 
