@@ -76,7 +76,6 @@ function setUp () {
 	for (it = 0; it < combatants.length; it++){
 		combatants[it].nameBox.innerText = combatants[it].name; // write the name
 		// write the initiative modifier
-		//alert(setInitiativeBox);
 	
 	}
 	let iBox = setInitiativeBox();
@@ -89,7 +88,10 @@ window.onload = setUp;
 
 
 function sortCombatOrder(){
+	// sort array
 	combatants.sort((a, b) => b.initiative - a.initiative);
+
+	//reposition combatants
 	let shift = 0;
 	for ( let i = 0; i< combatants.length; i++){
 		if (i > 0) {
@@ -111,15 +113,11 @@ function rolld20 () {
 }
 
 function rollInitiative () {
-	//orderArr = [];
 	for ( var i = 0; i < combatants.length; i++){
-		// if not a pc
 		var roll = rolld20(); // roll d20
 		combatants[i].initiative = roll+combatants[i].initModifier;
 		combatants[i].rollBox.innerHTML = combatants[i].initiative; // write the number to the text box
 	}
-	//alert (orderArr);
-	//return  orderArr ;
 }
 
 function quickTest () {
