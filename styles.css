@@ -6,36 +6,32 @@ body {
 
 h2 {
   font-size: 2rem;
-  color: #151515;
+  color: red;
   font-weight: Bold;
 }
 
+h4 {
+  font-size: 1rem;
+  color: #151515;
+  font-weight: bold;
+}
+
 #initiative-box {
-  width: 50%;
+  width: 33%;
   height: 400px;
   margin: auto;
   position: relative;
-  background-color: pink;
+  border: 1px solid #151515;
 }
 
 .buttons {
-  width: 20rem;
+  width: 33%;
   margin: 2rem auto;
 }
 
-/*
-#initiative-box :nth-child(1) { order: 3; };
-#initiative-box :nth-child(2) { order: 2; };
-#initiative-box :nth-child(3) { order: 1; };
-
-//  reset order in child of initiative-box
-
-.combatant :nth-child(1) {order: 1}
-.combatant :nth-child(2) {order: 2}
-.combatant :nth-child(3) {order: 3}
-
-*/
 .combatant {
+  position: absolute;
+  left: 10%;
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,42 +43,27 @@ h2 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 1rem;
-  padding: .75rem;
-  border-radius: .5rem;
+  margin: 1rem 0;
+  padding: .25rem;
+  border-radius: .25rem;
   border-width: 1px;
   border-style: solid;
   border-color: #151515;
   background-color: lightgrey;
 }
 
-.combatant h2 {
+.combatant h4 {
   margin: .5rem;
 }
 
 .combatant .initiative-roll p {
-  width: 2.2rem;
+  width: 1.2rem;
   background-color: black;
   color: white;
-  padding: 1rem;
-  font-size: 2rem;
+  padding: .5rem;
+  font-size: 1.1rem;
   margin: 0;
-  text-align: right;
-}
-
-#combatant1 {
-  position: absolute;
-  top: 0px;
-}
-
-#combatant2 {
-  position: absolute;
-  top: 101px;
-}
-
-#combatant3 {
-  position: absolute;
-  top: 202px;
+  text-align: center;
 }
 
 button {
@@ -99,6 +80,7 @@ button {
 }
 
 #test-button {
+  display: block;
   margin: 2rem;
   padding: 1rem;
   background-color: pink;
