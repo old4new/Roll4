@@ -8,8 +8,6 @@ const sortButton = document.getElementById('sort');
 const testButton = document.getElementById('testButton');
 
 
-
-
 let initiativeBox = document.getElementById('initiative-box');
 let combatantDivs = document.getElementsByClassName('combatant');
 let nameBoxArr = document.querySelectorAll('h4.name');
