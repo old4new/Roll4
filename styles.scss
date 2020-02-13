@@ -10,7 +10,6 @@ body {
 h2 {
 	font-size: 2rem;
 	color: red;
-	//letter-spacing: 0.03em;
 	font-weight: Bold;
 }
 
@@ -21,10 +20,11 @@ h4 {
 }
 
 #initiative-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 	width: 33%;
-	height: 400px;
 	margin: auto;
-	position: relative;
 	border: 1px solid $dark-grey;
 }
 
@@ -37,13 +37,11 @@ h4 {
 
 
 .combatant {
-	position: absolute;
-	left: 10%;
 	width: 80%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin: 1rem 0;
+	margin: 1rem auto 0;
 	padding: .25rem;
 	border-radius: .25rem;
 	border-width: 1px;

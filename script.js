@@ -8,8 +8,6 @@ const sortButton = document.getElementById('sort');
 const testButton = document.getElementById('testButton');
 
 
-
-
 let initiativeBox = document.getElementById('initiative-box');
 let combatantDivs = document.getElementsByClassName('combatant');
 let nameBoxArr = document.querySelectorAll('h4.name');
@@ -22,40 +20,46 @@ let combatants = [
 		name: "Orc1",
 		monsterType: "Orc",
 		maxHitPoints: 14,
+		currentHitPoints: 14,
 		initModifier: 2,
 		armour: 14,
 		initiative: 10,
 		comBox: combatantDivs[0],
 		nameBox: nameBoxArr[0],
-		rollBox: rollBoxArr[0]
+		rollBox: rollBoxArr[0],
+		initOrder: 0
 	},
 	{
 		name: "Ziggy",
 		nature: "pc",
 		maxHitPoints: 12,
+		currentHitPoints: 12,
 		initModifier: 2,
 		armour: 16,
 		initiative: 10,
 		comBox: combatantDivs[1],
 		nameBox: nameBoxArr[1],
-		rollBox: rollBoxArr[1]
+		rollBox: rollBoxArr[1],
+		initOrder: 0
 	},
 	{
 		name: "Orvex",
 		nature: "npc",
 		maxHitPoints: 13,
+		currentHitPoints: 13,
 		initModifier: -1,
 		armour: 12,
 		initiative: 10,
 		comBox: combatantDivs[2],
 		nameBox: nameBoxArr[2],
-		rollBox: rollBoxArr[2]
+		rollBox: rollBoxArr[2],
+		initOrder: 0
 	}
 ]
 
 
 
-
+/*
 function setInitiativeBox () {
 	var boxH = 0;
 	for (var i=0; i<combatantDivs.length; i++){
@@ -65,7 +69,7 @@ function setInitiativeBox () {
 	
 	return boxH;
 }
-
+*/
 
 
 
@@ -74,12 +78,12 @@ function setInitiativeBox () {
 function setUp () {
 	var it;
 	for (it = 0; it < combatants.length; it++){
-		combatants[it].nameBox.innerText = combatants[it].name; // write the name
+		combatants[it].nameBox.innerText = combatants[it].name; // write in combatants
 		// write the initiative modifier
 	
 	}
-	let iBox = setInitiativeBox();
-	initiativeBox.style.height = iBox;
+	//let iBox = setInitiativeBox();
+	//initiativeBox.style.height = iBox;
 
 	sortCombatOrder();
 }
@@ -91,15 +95,20 @@ function sortCombatOrder(){
 	// sort array
 	combatants.sort((a, b) => b.initiative - a.initiative);
 
-	//reposition combatants
-	let shift = 0;
+	for (var i = 0; i < combatants.length; i++) {
+		//combatants[i].initOrder = i;
+		combatants[i].comBox.style.order = i;
+	}
+
+	//reposition combatants using POSITION
+	/* let shift = 0;
 	for ( let i = 0; i< combatants.length; i++){
 		if (i > 0) {
 			shift += 10 + combatants[i-1].comBox.offsetHeight;
 		}
 		var pos = shift +"px";
 		combatants[i].comBox.style.top = pos;
-	}
+	}*/
 
 }
 
