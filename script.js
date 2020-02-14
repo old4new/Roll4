@@ -2,91 +2,120 @@
 
 
 const rollButton = document.getElementById('roller');
-
 const sortButton = document.getElementById('sort');
-
 const testButton = document.getElementById('testButton');
+const initiativeBox = document.getElementById('initiative-box');
 
+let combatantDivs = [];
+let nameBoxArr = [];
+let rollBoxArr = [];
+let combatants = [];
 
-let initiativeBox = document.getElementById('initiative-box');
-let combatantDivs = document.getElementsByClassName('combatant');
-let nameBoxArr = document.querySelectorAll('h4.name');
-let rollBoxArr = document.querySelectorAll('.roll');
-
-
-let combatants = [
-	{
-		nature: "monster",
-		name: "Orc1",
-		monsterType: "Orc",
-		maxHitPoints: 14,
-		currentHitPoints: 14,
-		initModifier: 2,
-		armour: 14,
-		initiative: 10,
-		comBox: combatantDivs[0],
-		nameBox: nameBoxArr[0],
-		rollBox: rollBoxArr[0],
-		initOrder: 0
-	},
-	{
-		name: "Ziggy",
-		nature: "pc",
-		maxHitPoints: 12,
-		currentHitPoints: 12,
-		initModifier: 2,
-		armour: 16,
-		initiative: 10,
-		comBox: combatantDivs[1],
-		nameBox: nameBoxArr[1],
-		rollBox: rollBoxArr[1],
-		initOrder: 0
-	},
-	{
-		name: "Orvex",
-		nature: "npc",
-		maxHitPoints: 13,
-		currentHitPoints: 13,
-		initModifier: -1,
-		armour: 12,
-		initiative: 10,
-		comBox: combatantDivs[2],
-		nameBox: nameBoxArr[2],
-		rollBox: rollBoxArr[2],
-		initOrder: 0
-	}
+//step 1: load the party list
+const party = [
+	["Ziggy", "Wizard", 4, 24, 2, 15,],
+	["Varis", "Fighter", 4, 44, 5, 18], 
+	["Dunk", "Barbarian", 4, 50, 3, 17], 
+	["Pippen", "Rogue", 4, 32, 5, 16]
 ]
 
 
+//step 2: load the monster list
 
-/*
-function setInitiativeBox () {
-	var boxH = 0;
-	for (var i=0; i<combatantDivs.length; i++){
-		boxH += combatantDivs[i].offsetHeight;
+const monsters = [
+	["Orc 1", "Orc", 15, 1, 13],
+	["Orc 2", "Orc", 15, 1, 13],
+	["Orc 3", "Orc", 15, 1, 13],
+	["Plink", "Goblin", 7, 2, 15],
+	["Plonk", "Goblin", 7, 2, 15],
+	["Smaug", "Ancient Red Dragon", 546, 0, 22]
+]
+
+class pc {
+	constructor (name, pcClass, level, maxHP, initModifier, ac, pos){
+		this.name = name;
+		this.pcClass = pcClass;
+		this.level = level;
+		this.maxHp = maxHP;
+		this.currentHP = maxHP;
+		this.initModifier = initModifier;
+		this.initiative = 1;
+		this.ac = ac;
+		this.comBox = combatantDivs[pos];
+		this.nameBox = nameBoxArr[pos];
+		this.rollBox = rollBoxArr[pos];
+
 	}
-	boxH = boxH + (combatantDivs.length * 20) + "px";
-	
-	return boxH;
 }
-*/
+class monster {
+	constructor ( name, monsterType, maxHP, initModifier, ac, pos){
+		this.name = name;
+		this.monsterType = monsterType;
+		this.maxHP = maxHP;
+		this.currentHP = maxHP;
+		this.initModifier = initModifier;
+		this.ac = ac;
+		this.initiative = 1;
+		this.comBox = combatantDivs[pos];
+		this.nameBox = nameBoxArr[pos];
+		this.rollBox = rollBoxArr[pos];
 
+	}
+}
 
-
+//step 3: create the array of combatants (party + monsters)
 
 
 function setUp () {
-	var it;
-	for (it = 0; it < combatants.length; it++){
-		combatants[it].nameBox.innerText = combatants[it].name; // write in combatants
-		// write the initiative modifier
 	
+	// make div for each pc and each monster
+	for (var i = 0; i < party.length; i++){
+		makeCombatantDiv("pc"); /// need to create the Combatant Divs array before creating the objects
 	}
-	//let iBox = setInitiativeBox();
-	//initiativeBox.style.height = iBox;
+	for (var j = 0; j < monsters.length; j++) {
+		makeCombatantDiv("monster");
+	}
+	// make arrays
 
-	sortCombatOrder();
+	combatantDivs = document.getElementsByClassName('combatant');
+	nameBoxArr = document.querySelectorAll('h4.name');
+	rollBoxArr = document.querySelectorAll('.roll');
+
+
+	// make combatant objects
+
+	for (var k = 0; k < party.length; k++){
+		combatants[k] = new pc(...party[k], k);
+	}
+	for (var l = 0; l < monsters.length; l++){
+		let m = party.length + l;
+		combatants[m] = new monster(...monsters[l], m);
+	}
+	// Fill the div with the right info
+	for (let it = 0; it < combatants.length; it++){
+		combatants[it].nameBox.innerText = combatants[it].name; // write in combatants
+	}
 }
+
+function makeCombatantDiv (type) {
+	console.log(type);
+	let newCombBox = document.createElement('div');
+	let classString = "combatant " + type;
+	newCombBox.className = classString;
+	let newName = document.createElement('h4');
+	newName.className = "name";
+	newName.appendChild(document.createTextNode(''));
+	let newIntBox = document.createElement('p');
+	newIntBox.className ="roll";
+	newIntBox.appendChild(document.createTextNode(''));
+	newCombBox.appendChild(newName);
+	newCombBox.appendChild(newIntBox);
+
+	initiativeBox.appendChild(newCombBox);
+	
+}
+
+
 
 window.onload = setUp;
 
@@ -96,23 +125,10 @@ function sortCombatOrder(){
 	combatants.sort((a, b) => b.initiative - a.initiative);
 
 	for (var i = 0; i < combatants.length; i++) {
-		//combatants[i].initOrder = i;
 		combatants[i].comBox.style.order = i;
 	}
 
-	//reposition combatants using POSITION
-	/* let shift = 0;
-	for ( let i = 0; i< combatants.length; i++){
-		if (i > 0) {
-			shift += 10 + combatants[i-1].comBox.offsetHeight;
-		}
-		var pos = shift +"px";
-		combatants[i].comBox.style.top = pos;
-	}*/
-
 }
-
-
 
 
 
@@ -130,38 +146,17 @@ function rollInitiative () {
 }
 
 function quickTest () {
-	console.log(rollBoxArr);
+	console.log(combatants);
 }
 
-function addThing () {
-	let newCombBox = document.createElement('div');
-	newCombBox.className = "combatant";
-	let newName = document.createElement('h4');
-	newName.className = "name";
-	newName.appendChild(document.createTextNode('Varis'));
-	let newIntBox = document.createElement('p');
-	newIntBox.className ="roll";
-	newIntBox.appendChild(document.createTextNode(''));
-	newCombBox.appendChild(newName);
-	newCombBox.appendChild(newIntBox);
 
-	console.log(newCombBox);
-	initiativeBox.appendChild(newCombBox);
-
-	// for testing, hide the existing combatants 
-	// for (var i=0; i < combatants.length; i++) {
-	// 	combatants[i].comBox.style.visibility = "hidden";
-	// }
-
-	
-}
 
 
 rollButton.addEventListener( "click", rollInitiative );
 
 sortButton.addEventListener("click", function () { sortCombatOrder() });
 
-testButton.addEventListener("click", addThing);
+testButton.addEventListener("click", quickTest);
 
 
 

@@ -30,6 +30,8 @@ h4 {
   width: 33%;
   margin: auto;
   border: 1px solid #151515;
+  padding: 1rem;
+  background-color: #151515;
 }
 
 .buttons {
@@ -49,13 +51,9 @@ h4 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 1rem auto 0;
+  margin: .25rem auto .25rem;
   padding: .25rem;
-  border-radius: .25rem;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #151515;
-  background-color: lightgrey;
+  background-color: #eee;
 }
 
 .combatant h4 {
@@ -67,9 +65,13 @@ h4 {
   background-color: black;
   color: white;
   padding: .5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin: 0;
   text-align: center;
+}
+
+.pc {
+  background-color: #ded;
 }
 
 button {
