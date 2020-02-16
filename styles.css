@@ -2,11 +2,16 @@
 @import url(/Users/murraycreative/Google Drive/web/Roll4/normalize.css);
 body {
   font-family: "Bree Serif", serif;
+  background-color: #151515;
+}
+
+h1 {
+  color: white;
 }
 
 h2 {
   font-size: 1.75rem;
-  color: red;
+  color: #eee;
   font-weight: Bold;
 }
 
