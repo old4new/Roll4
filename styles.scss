@@ -2,15 +2,19 @@
 @import "normalize.css";
 
 $dark-grey: #151515;
+$mid-grey: #777;
 $light-grey1: #eee;
-$light-grey2: #ded;
+$light-grey2: #ccc;
+
+$main-font: 'Bree Serif', serif;
+$sans: 'Assistant', sans-serif;;
 
 body {
-		font-family: 'Bree Serif', serif;
+		font-family: $main-font;
 }
 
 h2 {
-	font-size: 2rem;
+	font-size: 1.75rem;
 	color: red;
 	font-weight: Bold;
 }
@@ -47,18 +51,38 @@ h4 {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin: .25rem auto .25rem;
+	margin: .25rem auto ;
 	padding: .25rem;
 
 	background-color: $light-grey1;
 	
-	h4 {
-		margin: .5rem;
+	h4.name {
+		margin: 0;
+		padding: 0;
+		border: 1px pink;
+		color: $dark-grey;
 	}
-	
+
+	p.details {
+		font-family: $sans;
+		font-weight: 700;
+		font-size: .625rem;
+		letter-spacing: .05rem;
+		color: $dark-grey;
+		text-transform: uppercase;
+		line-height: 1rem;
+		margin: 0;
+
+		strong{
+			font-weight: 400;
+			padding-left: .25rem;
+		}
+		
+	}
+
 	p.roll {
 		width: 1.2rem;
-		background-color: black;
+		background-color:$dark-grey;
         color: white;
 		padding: .5rem;
 		font-size: 1rem;
