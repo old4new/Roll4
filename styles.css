@@ -1,12 +1,19 @@
 /* Scss Document */
 @import url(/Users/murraycreative/Google Drive/web/Roll4/normalize.css);
 body {
-  font-family: 'Bree Serif', serif;
+  font-family: "Bree Serif", serif;
+  background-color: #151515;
+}
+
+h1 {
+  color: white;
+  margin: auto;
+  text-align: center;
 }
 
 h2 {
-  font-size: 2rem;
-  color: red;
+  font-size: 1.75rem;
+  color: #eee;
   font-weight: Bold;
 }
 
@@ -14,6 +21,46 @@ h4 {
   font-size: 1rem;
   color: #151515;
   font-weight: bold;
+}
+
+form label {
+  color: #eee;
+}
+
+.form-box {
+  padding: .5rem;
+}
+
+#party-box {
+  width: 80%;
+  margin: auto;
+  background-color: black;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50px 1fr 1fr 50px;
+      grid-template-columns: 50px 1fr 1fr 50px;
+  -ms-grid-rows: 50px 1fr 50p;
+      grid-template-rows: 50px 1fr 50p;
+  grid-gap: 2rem;
+}
+
+#pc-maker {
+  width: 100%;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+#adventure-party {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 4;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 #initiative-box {
@@ -30,6 +77,8 @@ h4 {
   width: 33%;
   margin: auto;
   border: 1px solid #151515;
+  padding: 1rem;
+  background-color: #151515;
 }
 
 .buttons {
@@ -49,35 +98,61 @@ h4 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 1rem auto 0;
+  margin: .25rem auto;
   padding: .25rem;
-  border-radius: .25rem;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #151515;
-  background-color: lightgrey;
+  background-color: #eee;
 }
 
-.combatant h4 {
-  margin: .5rem;
+.combatant h4.name {
+  margin: 0;
+  padding: 0;
+  border: 1px pink;
+  color: #151515;
+}
+
+.combatant p.details {
+  font-family: "Assistant", sans-serif;
+  font-weight: 700;
+  font-size: .625rem;
+  letter-spacing: .05rem;
+  color: #151515;
+  text-transform: uppercase;
+  line-height: 1rem;
+  margin: 0;
+}
+
+.combatant p.details strong {
+  font-weight: 400;
+  padding-left: .25rem;
 }
 
 .combatant p.roll {
   width: 1.2rem;
-  background-color: black;
+  background-color: #151515;
   color: white;
   padding: .5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin: 0;
   text-align: center;
 }
 
+.pc {
+  background-color: #777;
+}
+
 button {
   font-family: 'Bree Serif', serif;
-  font-size: 1em;
-  padding: 1em 2em;
+  font-size: .75rem;
+  padding: .75em 1em;
   background-color: orange;
   border: none;
+}
+
+.btn-small {
+  color: #777;
+  font-family: "Assistant", sans-serif;
+  font-size: .75rem;
+  background-color: #151515;
 }
 
 #sort {
@@ -90,5 +165,10 @@ button {
   margin: 2rem;
   padding: 1rem;
   background-color: pink;
+}
+
+ul li {
+  color: white;
+  text-decoration: none;
 }
 /*# sourceMappingURL=styles.css.map */

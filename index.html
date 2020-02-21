@@ -2,43 +2,58 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css?family=Lusitana&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Assistant:400,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="styles.css">	
-<title>Initiative</title>
+<title>Monster maker</title>
 </head>
 
 <body>
-   <div id="initiative-box">
-        <div class="combatant" >
-            <h4 class="name" id="combatant1_name" >PC Name</h4>
-			<p class="roll" contentEditable="true"></p>
-        </div>
-	   
-        <div class="combatant" >
-            <h4 class="name" id="combatant2_name">NPC Name</h4>
-			<p class="roll" contentEditable="true"></p>
-        </div>
-	   
-        <div class="combatant" >
-            <h4 class="name" id="combatant3_name">Monster</h4>
-			<p class="roll" contentEditable="true"></p>
-       </div>
-    </div>
+	<div class="intro">
+		<h1>monst'r'us</h1>
+		Weclome to the Monst'r'us, the d20 combat manager designed to keep the fun on the table.
+	</div>
+	<div class="new-party">
+		<form>
+			<label>Start with the name of your adventure party</label>
+			<p class="gloss">Keep it simple and descriptive, eg. "The Apocolypse Gang"</p>
+			<input type="text">
+		</form>
+		<button>Start a party</button>
+	</div>
+
+	<div class="party-list">
+		<h2>
+			Your adventure parties:
+		</h2>
+		<div class="party-off">
+			<p class="intro">
+				You currently have no adventure parties set up. 
+			</p>
+		</div>
+		<div class="party-on">
+			<p class="intro">
+				Select the party for your game.
+			</p>
+			<ul>
+				<li class="party-names"><a href="#">Kai's Phandalin Gang</a></li>
+				<li class="party-names"><a href="#">Alison's SKT Adventure</a></li>
+				<li class="party-names"><a href="#">Lady Lothar's Revenge</a></li>
+			</ul>
+			<button id="next-step">Party on!</button>
+		</div>
+	</div>
+	
 	
 	<div class="buttons">
-		<button id="roller" name="roller">Roll Initiative</button>
-    	<button id="sort" name="sort">Sort</button>
 		
-		<button id="testButton">Test Button</button>
+		<button id="test-button">Test Button</button>
 
-	</div>
+	</div> 
 	
-	<div class="addCombatant">
-		<form action=""></form>
-	</div>
+
 	
 	
-<script defer src="script.js"></script>
+<script defer src="add-char-script.js"></script>
 </body>
 </html>

@@ -2,14 +2,28 @@
 @import "normalize.css";
 
 $dark-grey: #151515;
+$mid-grey: #777;
+$light-grey1: #eee;
+$light-grey2: #ccc;
+
+$main-font: 'Bree Serif', serif;
+$sans: 'Assistant', sans-serif;;
 
 body {
-		font-family: 'Bree Serif', serif;
+	font-family: $main-font;
+	background-color: $dark-grey;
+}
+
+
+h1 {
+	color: white;
+	margin: auto;
+	text-align: center;
 }
 
 h2 {
-	font-size: 2rem;
-	color: red;
+	font-size: 1.75rem;
+	color: $light-grey1;
 	font-weight: Bold;
 }
 
@@ -19,6 +33,43 @@ h4 {
 	font-weight: bold;
 }
 
+form label {
+	color: $light-grey1;
+}
+
+.form-box {
+	padding: .5rem;
+}
+
+#party-box {
+	width: 80%;
+	margin: auto;
+	background-color: black;
+	display: grid;
+	grid-template-columns: 50px 1fr 1fr 50px;
+	grid-template-rows: 50px 1fr 50p;
+	grid-gap: 2rem;
+}
+#pc-maker {
+	//background-color: blue;
+	width: 100%;
+	grid-column-start: 2 ;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+
+#adventure-party {
+	//background-color: pink; 
+	grid-column-start: 3 ;
+	grid-column-end: 4;
+	grid-row-start: 2;
+	grid-row-end: 3;
+
+}
+
+
+
 #initiative-box {
 	display: flex;
 	flex-direction: column;
@@ -26,6 +77,8 @@ h4 {
 	width: 33%;
 	margin: auto;
 	border: 1px solid $dark-grey;
+	padding: 1rem;
+	background-color: $dark-grey;
 }
 
 .buttons {
@@ -36,44 +89,72 @@ h4 {
 
 
 
+
+
 .combatant {
 	width: 80%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin: 1rem auto 0;
+	margin: .25rem auto ;
 	padding: .25rem;
-	border-radius: .25rem;
-	border-width: 1px;
-	border-style: solid;
-	border-color: $dark-grey;
-	background-color: lightgrey;
+
+	background-color: $light-grey1;
 	
-	h4 {
-		margin: .5rem;
+	h4.name {
+		margin: 0;
+		padding: 0;
+		border: 1px pink;
+		color: $dark-grey;
 	}
-	
+
+	p.details {
+		font-family: $sans;
+		font-weight: 700;
+		font-size: .625rem;
+		letter-spacing: .05rem;
+		color: $dark-grey;
+		text-transform: uppercase;
+		line-height: 1rem;
+		margin: 0;
+
+		strong{
+			font-weight: 400;
+			padding-left: .25rem;
+		}
+		
+	}
+
 	p.roll {
 		width: 1.2rem;
-		background-color: black;
+		background-color:$dark-grey;
         color: white;
 		padding: .5rem;
-		font-size: 1.1rem;
+		font-size: 1rem;
         margin: 0;
 		text-align: center;
 	}
 }
 
-
+.pc {
+	background-color: $mid-grey;
+}
 
 
 
 button {
 	font-family: 'Bree Serif', serif;
-	font-size: 1em;
-	padding: 1em 2em;
+	font-size: .75rem;
+	padding: .75em 1em;
 	background-color: orange;
 	border: none;
+}
+
+.btn-small {
+	color: $mid-grey;
+	font-family: $sans;
+	font-size: .75rem;
+	background-color: $dark-grey;
 }
 
 #sort {
@@ -87,4 +168,12 @@ button {
 	padding: 1rem;
 	background-color: pink;
 	
+}
+
+ul {
+
+	li {
+		color: white;
+		text-decoration: none;
+	}
 }

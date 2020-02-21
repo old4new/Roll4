@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Assistant:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="styles.css">	
+<title>Monster maker</title>
+</head>
+
+<body>
+	<h1>d20 monster wrangler</h1>
+	<div id="party-box">
+		<div id="pc-maker">
+			<h2>Add a PC</h2>
+			<form id="add-pc-form" >
+				<!-- action="#" method="post" --><!--include this inside the FORM tag-->
+				<div class="form-box">
+					<label for="pc-name">Name</label>
+					<input type="text" id="pc-name">
+				</div>
+
+				<div class="form-box">
+					<label for="pc-class">Class</label>
+					<input type="text" id="pc-class">
+				</div>
+
+				<div class="form-box">
+					<label for="pc-level">Level</label>
+					<input type="text" id="pc-level">
+				</div>
+
+				<div class="form-box">
+					<label for="pc-maxhp">Max HP</label>
+					<input type="text" id="pc-maxhp">
+				</div>
+
+				<div class="form-box">
+					<label for="pc-init-mod">Initiative Modifier</label>
+					<input type="text" id="pc-init-mod">
+				</div>
+
+				<div class="form-box">
+					<label for="pc-ac">Armour Class</label>
+					<input type="text" id="pc-ac">
+				</div>
+
+
+				
+			</form>
+			   
+			<div class="form-box">
+				<button id="add-pc-btn">Add Character</button>
+				<button class="btn-small" id="clear">Clear</button>
+			</div>
+
+
+		</div>
+		<div id="adventure-party">
+			<h2 id="party-name">The Apocalypse Gang</h2>
+			<ul id="pc-list">
+			</ul>
+			<button id="saveparty">Save Party</button>
+		</div>
+	</div>
+
+
+	
+	
+	<div class="buttons">
+		
+		<button id="test-button">Test Button</button>
+
+	</div> 
+	
+
+	
+	
+<script defer src="add-char-script.js"></script>
+</body>
+</html>
