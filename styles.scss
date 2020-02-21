@@ -55,16 +55,16 @@ form label {
 	width: 100%;
 	grid-column-start: 2 ;
 	grid-column-end: 3;
-	row-start: 2;
-	row-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 3;
 }
 
 #adventure-party {
 	//background-color: pink; 
 	grid-column-start: 3 ;
 	grid-column-end: 4;
-	row-start: 2;
-	row-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 3;
 
 }
 

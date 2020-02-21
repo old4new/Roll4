@@ -49,16 +49,18 @@ form label {
   -ms-grid-column: 2;
       grid-column-start: 2;
   grid-column-end: 3;
-  row-start: 2;
-  row-end: 3;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 #adventure-party {
   -ms-grid-column: 3;
       grid-column-start: 3;
   grid-column-end: 4;
-  row-start: 2;
-  row-end: 3;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 #initiative-box {
