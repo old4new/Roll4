@@ -1,12 +1,15 @@
 /* Scss Document */
-@import url(/Users/murraycreative/Google Drive/web/Roll4/normalize.css);
+@import url(/Users/pauloleary/Google Drive/web/Roll4/normalize.css);
 body {
   font-family: "Bree Serif", serif;
   background-color: #151515;
+  color: #777;
 }
 
 h1 {
-  color: white;
+  font-family: "Creepster";
+  font-size: 6rem;
+  color: #777;
   margin: auto;
   text-align: center;
 }
@@ -14,13 +17,54 @@ h1 {
 h2 {
   font-size: 1.75rem;
   color: #eee;
-  font-weight: Bold;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: white;
 }
 
 h4 {
   font-size: 1rem;
   color: #151515;
-  font-weight: bold;
+  font-weight: 400;
+}
+
+p {
+  font-family: "Bree Serif", serif;
+  font-weight: 300;
+}
+
+.main-container {
+  display: -ms-grid;
+  display: grid;
+  height: 100vw;
+  -ms-grid-columns: 67% 33%;
+      grid-template-columns: 67% 33%;
+  -ms-grid-rows: 0px auto;
+      grid-template-rows: 0px auto;
+}
+
+.welcome {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 2;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
+  padding: 3rem;
+}
+
+.party-list {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: #101010;
+  padding: 3rem;
 }
 
 form label {

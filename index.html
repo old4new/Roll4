@@ -2,48 +2,51 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css?family=Assistant:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Assistant:300,400,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Creepster&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="styles.css">	
 <title>Monster maker</title>
 </head>
 
 <body>
-	<div class="intro">
-		<h1>monst'r'us</h1>
-		Weclome to the Monst'r'us, the d20 combat manager designed to keep the fun on the table.
-	</div>
-	<div class="new-party">
-		<form>
-			<label>Start with the name of your adventure party</label>
-			<p class="gloss">Keep it simple and descriptive, eg. "The Apocolypse Gang"</p>
-			<input type="text">
-		</form>
-		<button>Start a party</button>
-	</div>
+	<div class="main-container">
+		<div class="welcome">
+			<h1>monst'r'us</h1>
+			Weclome to the Monst'r'us, the d20 combat manager designed to keep the fun on the table.
+			<div class="new-party">
+				<form>
+					<label>Start with the name of your adventure party</label>
+					<p class="gloss">Keep it simple and descriptive, eg. "The Apocolypse Gang"</p>
+					<input type="text">
+				</form>
+				<button>Start a party</button>
+			</div>
+		</div>
 
-	<div class="party-list">
-		<h2>
-			Your adventure parties:
-		</h2>
-		<div class="party-off">
-			<p class="intro">
-				You currently have no adventure parties set up. 
-			</p>
-		</div>
-		<div class="party-on">
-			<p class="intro">
-				Select the party for your game.
-			</p>
-			<ul>
-				<li class="party-names"><a href="#">Kai's Phandalin Gang</a></li>
-				<li class="party-names"><a href="#">Alison's SKT Adventure</a></li>
-				<li class="party-names"><a href="#">Lady Lothar's Revenge</a></li>
-			</ul>
-			<button id="next-step">Party on!</button>
+
+		<div class="party-list">
+			<h3>
+				Your adventure parties:
+			</h3>
+			<div class="party-off">
+				<p class="intro">
+					You currently have no adventure parties set up. 
+				</p>
+			</div>
+			<div class="party-on">
+				<p class="intro">
+					Select the party for your game.
+				</p>
+				<ul>
+					<li class="party-names"><a href="#">Kai's Phandalin Gang</a></li>
+					<li class="party-names"><a href="#">Alison's SKT Adventure</a></li>
+					<li class="party-names"><a href="#">Lady Lothar's Revenge</a></li>
+				</ul>
+				<button id="next-step">Party on!</button>
+			</div>
 		</div>
 	</div>
-	
 	
 	<div class="buttons">
 		

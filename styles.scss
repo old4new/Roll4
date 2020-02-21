@@ -2,21 +2,26 @@
 @import "normalize.css";
 
 $dark-grey: #151515;
+$dark-grey2: #101010;
 $mid-grey: #777;
 $light-grey1: #eee;
 $light-grey2: #ccc;
 
 $main-font: 'Bree Serif', serif;
 $sans: 'Assistant', sans-serif;;
+$monster-font: 'Creepster';
 
 body {
 	font-family: $main-font;
 	background-color: $dark-grey;
+	color: $mid-grey;
 }
 
 
 h1 {
-	color: white;
+	font-family: $monster-font;
+	font-size: 6rem;
+	color: $mid-grey;
 	margin: auto;
 	text-align: center;
 }
@@ -24,13 +29,52 @@ h1 {
 h2 {
 	font-size: 1.75rem;
 	color: $light-grey1;
-	font-weight: Bold;
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 1.25rem;
+	color: white;
 }
 
 h4 {
 	font-size: 1rem;
 	color: $dark-grey;
-	font-weight: bold;
+	font-weight: 400;
+}
+
+p {
+	font-family: $main-font;
+	font-weight: 300;
+}
+
+.main-container {
+	display: grid;
+	height: 100vw;
+	grid-template-columns: 67% 33%;
+	grid-template-rows:	0px auto;
+}
+
+.welcome {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	padding: 3rem;
+}
+
+.party-list {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 3;
+
+	background-color: $dark-grey2;
+	padding: 3rem;
+
+
+
+	
 }
 
 form label {
