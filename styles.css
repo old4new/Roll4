@@ -7,6 +7,8 @@ body {
 
 h1 {
   color: white;
+  margin: auto;
+  text-align: center;
 }
 
 h2 {
@@ -19,6 +21,44 @@ h4 {
   font-size: 1rem;
   color: #151515;
   font-weight: bold;
+}
+
+form label {
+  color: #eee;
+}
+
+.form-box {
+  padding: .5rem;
+}
+
+#party-box {
+  width: 80%;
+  margin: auto;
+  background-color: black;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50px 1fr 1fr 50px;
+      grid-template-columns: 50px 1fr 1fr 50px;
+  -ms-grid-rows: 50px 1fr 50p;
+      grid-template-rows: 50px 1fr 50p;
+  grid-gap: 2rem;
+}
+
+#pc-maker {
+  width: 100%;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+  row-start: 2;
+  row-end: 3;
+}
+
+#adventure-party {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 4;
+  row-start: 2;
+  row-end: 3;
 }
 
 #initiative-box {
@@ -95,15 +135,22 @@ h4 {
 }
 
 .pc {
-  background-color: #ccc;
+  background-color: #777;
 }
 
 button {
   font-family: 'Bree Serif', serif;
-  font-size: 1em;
-  padding: 1em 2em;
+  font-size: .75rem;
+  padding: .75em 1em;
   background-color: orange;
   border: none;
+}
+
+.btn-small {
+  color: #777;
+  font-family: "Assistant", sans-serif;
+  font-size: .75rem;
+  background-color: #151515;
 }
 
 #sort {
@@ -116,5 +163,10 @@ button {
   margin: 2rem;
   padding: 1rem;
   background-color: pink;
+}
+
+ul li {
+  color: white;
+  text-decoration: none;
 }
 /*# sourceMappingURL=styles.css.map */

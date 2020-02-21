@@ -9,31 +9,51 @@
 </head>
 
 <body>
-   <div id="pc-maker">
-	   <h1>d20 monster wrangler</h1>
-	   <h2>Enter PC data</h2>
-	   <fieldset>
-			<form >
-				<label for="">name</label>
-				<input type="text">
-				<input type="submit">
-	   		</form>
-        </fieldset>
-    </div>
-	
-	<!-- <div class="buttons">
-		<button id="roller" name="roller">Roll Initiative</button>
-    	<button id="sort" name="sort">Sort</button>
-		
-		<button id="testButton">Test Button</button>
+	<div class="intro">
+		<h1>monst'r'us</h1>
+		Weclome to the Monst'r'us, the d20 combat manager designed to keep the fun on the table.
+	</div>
+	<div class="new-party">
+		<form>
+			<label>Start with the name of your adventure party</label>
+			<p class="gloss">Keep it simple and descriptive, eg. "The Apocolypse Gang"</p>
+			<input type="text">
+		</form>
+		<button>Start a party</button>
+	</div>
 
-	</div> -->
-	
-	<div class="addCombatant">
-		<form action=""></form>
+	<div class="party-list">
+		<h2>
+			Your adventure parties:
+		</h2>
+		<div class="party-off">
+			<p class="intro">
+				You currently have no adventure parties set up. 
+			</p>
+		</div>
+		<div class="party-on">
+			<p class="intro">
+				Select the party for your game.
+			</p>
+			<ul>
+				<li class="party-names"><a href="#">Kai's Phandalin Gang</a></li>
+				<li class="party-names"><a href="#">Alison's SKT Adventure</a></li>
+				<li class="party-names"><a href="#">Lady Lothar's Revenge</a></li>
+			</ul>
+			<button id="next-step">Party on!</button>
+		</div>
 	</div>
 	
 	
-<script defer src="script.js"></script>
+	<div class="buttons">
+		
+		<button id="test-button">Test Button</button>
+
+	</div> 
+	
+
+	
+	
+<script defer src="add-char-script.js"></script>
 </body>
 </html>

@@ -10,12 +10,15 @@ $main-font: 'Bree Serif', serif;
 $sans: 'Assistant', sans-serif;;
 
 body {
-		font-family: $main-font;
-		background-color: $dark-grey;
+	font-family: $main-font;
+	background-color: $dark-grey;
 }
+
 
 h1 {
 	color: white;
+	margin: auto;
+	text-align: center;
 }
 
 h2 {
@@ -29,6 +32,43 @@ h4 {
 	color: $dark-grey;
 	font-weight: bold;
 }
+
+form label {
+	color: $light-grey1;
+}
+
+.form-box {
+	padding: .5rem;
+}
+
+#party-box {
+	width: 80%;
+	margin: auto;
+	background-color: black;
+	display: grid;
+	grid-template-columns: 50px 1fr 1fr 50px;
+	grid-template-rows: 50px 1fr 50p;
+	grid-gap: 2rem;
+}
+#pc-maker {
+	//background-color: blue;
+	width: 100%;
+	grid-column-start: 2 ;
+	grid-column-end: 3;
+	row-start: 2;
+	row-end: 3;
+}
+
+#adventure-party {
+	//background-color: pink; 
+	grid-column-start: 3 ;
+	grid-column-end: 4;
+	row-start: 2;
+	row-end: 3;
+
+}
+
+
 
 #initiative-box {
 	display: flex;
@@ -97,17 +137,24 @@ h4 {
 }
 
 .pc {
-	background-color: $light-grey2;
+	background-color: $mid-grey;
 }
 
 
 
 button {
 	font-family: 'Bree Serif', serif;
-	font-size: 1em;
-	padding: 1em 2em;
+	font-size: .75rem;
+	padding: .75em 1em;
 	background-color: orange;
 	border: none;
+}
+
+.btn-small {
+	color: $mid-grey;
+	font-family: $sans;
+	font-size: .75rem;
+	background-color: $dark-grey;
 }
 
 #sort {
@@ -121,4 +168,12 @@ button {
 	padding: 1rem;
 	background-color: pink;
 	
+}
+
+ul {
+
+	li {
+		color: white;
+		text-decoration: none;
+	}
 }

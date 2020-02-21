@@ -49,7 +49,7 @@ class pc {
 	}
 }
 class monster {
-	constructor ( name, monsterType, maxHP, initModifier, ac, pos){
+	constructor ( name, monsterType, maxHP, initModifier, ac, pos ){
 		this.name = name;
 		this.monsterType = monsterType;
 		this.maxHP = maxHP;
@@ -114,7 +114,7 @@ function setUp () {
 }
 
 function makeCombatantDiv (type, idno) {
-	console.log(type);
+	//console.log(type);
 	let newCombBox = document.createElement('div'); //combatant box
 	newCombBox.className = "combatant " + type;
 
