@@ -4,9 +4,12 @@
 $dark-grey: #151515;
 $dark-grey2: #101010;
 $dark-grey3: #202020;
+$dark-grey4: #2c2c2c;
 $mid-grey: #777;
 $light-grey1: #eee;
 $light-grey2: #ccc;
+$spot-color-highlight: #fe5101;
+$spot-color: #cf5813;
 
 $main-font: 'Bree Serif', serif;
 $sans: 'Assistant', sans-serif;;
@@ -67,11 +70,11 @@ p {
 	justify-content: center;
 	align-items: center;
 
-	// h1{
-	// 	background: -webkit-linear-gradient(#eee, black);
-  	// 	-webkit-background-clip: text;
-  	// 	-webkit-text-fill-color: transparent
-	// }
+	h1{
+		background: -webkit-linear-gradient(#eee, black);
+  		-webkit-background-clip: text;
+  		-webkit-text-fill-color: transparent
+	}
 
 	p{
 		text-align: center;
@@ -118,6 +121,9 @@ p {
 	}
 }
 
+#party-on {
+	visibility: hidden; 
+}
 .party-list {
 	grid-column-start: 2;
 	grid-column-end: 3;
@@ -126,26 +132,50 @@ p {
 
 	background-color: $dark-grey2;
 	padding: 3rem;
+}
 
-	
+ul {
+	margin:0;
+	padding: 0;
 }
 
 li.party-names {
 	list-style-type: none;
-	margin: .5rem;
+	margin: .5rem 0;
 
 	
 	a {
 		display: block;
-		background-color: pink;
-		padding: 1rem;
+		background-color: $dark-grey3;
+		padding: .5rem;
 		font-family: $sans;
 		text-decoration: none;
-		color: $llight-grey2;
+		color: $light-grey2;
 	}
 
 	a:hover {
-		background-color: pink;
+		background-color: $dark-grey4;
+		color: white;
+	}
+}
+
+
+li.name {
+	list-style-type: none;
+	margin: .5rem 0;
+
+	
+	a {
+		display: block;
+		background-color: $dark-grey3;
+		padding: .5rem;
+		font-family: $sans;
+		text-decoration: none;
+		color: $light-grey2;
+	}
+
+	a:hover {
+		background-color: $dark-grey4;
 		color: white;
 	}
 }
@@ -170,7 +200,7 @@ form label {
 	grid-gap: 2rem;
 }
 #pc-maker {
-	//background-color: blue;
+	visibility: hidden; 
 	width: 100%;
 	grid-column-start: 2 ;
 	grid-column-end: 3;
@@ -265,8 +295,12 @@ button {
 	font-family: 'Bree Serif', serif;
 	font-size: .75rem;
 	padding: .75em 1em;
-	background-color: orange;
+	background-color: $spot-color;
 	border: none;
+}
+
+button:hover {
+	background-color: $spot-color-highlight;
 }
 
 .btn-small {

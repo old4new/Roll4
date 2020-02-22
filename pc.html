@@ -11,57 +11,64 @@
 <body>
 	<h1>d20 monster wrangler</h1>
 	<div id="party-box">
-		<div id="pc-maker">
-			<h2>Add a PC</h2>
-			<form id="add-pc-form" >
-				<!-- action="#" method="post" --><!--include this inside the FORM tag-->
-				<div class="form-box">
-					<label for="pc-name">Name</label>
-					<input type="text" id="pc-name">
-				</div>
+		<div id="adventure-party">
+			<h2 id="party-name"></h2>
+			<div id="no-party">
+				<p>There are no PCs in this party. Click on the button below to add one.</p>
+			</div>
+			<ul id="pc-list">
+			</ul>
+			<button id="make-pc-btn">Add PC</button>
+			<button id="saveparty">Save Party</button>
+		</div>
 
-				<div class="form-box">
-					<label for="pc-class">Class</label>
-					<input type="text" id="pc-class">
-				</div>
+		
 
-				<div class="form-box">
-					<label for="pc-level">Level</label>
-					<input type="text" id="pc-level">
-				</div>
-
-				<div class="form-box">
-					<label for="pc-maxhp">Max HP</label>
-					<input type="text" id="pc-maxhp">
-				</div>
-
-				<div class="form-box">
-					<label for="pc-init-mod">Initiative Modifier</label>
-					<input type="text" id="pc-init-mod">
-				</div>
-
-				<div class="form-box">
-					<label for="pc-ac">Armour Class</label>
-					<input type="text" id="pc-ac">
-				</div>
-
-
-				
-			</form>
-			   
+	</div>
+	<div id="pc-maker">
+		<h2>Add a PC</h2>
+		<form id="add-pc-form" >
+			<!-- action="#" method="post" --><!--include this inside the FORM tag-->
 			<div class="form-box">
-				<button id="add-pc-btn">Add Character</button>
-				<button class="btn-small" id="clear">Clear</button>
+				<label for="pc-name">Name</label>
+				<input type="text" id="pc-name">
+			</div>
+
+			<div class="form-box">
+				<label for="pc-class">Class</label>
+				<input type="text" id="pc-class">
+			</div>
+
+			<div class="form-box">
+				<label for="pc-level">Level</label>
+				<input type="text" id="pc-level">
+			</div>
+
+			<div class="form-box">
+				<label for="pc-maxhp">Max HP</label>
+				<input type="text" id="pc-maxhp">
+			</div>
+
+			<div class="form-box">
+				<label for="pc-init-mod">Initiative Modifier</label>
+				<input type="text" id="pc-init-mod">
+			</div>
+
+			<div class="form-box">
+				<label for="pc-ac">Armour Class</label>
+				<input type="text" id="pc-ac">
 			</div>
 
 
+			
+		</form>
+		   
+		<div class="form-box">
+			<button id="add-pc-btn">Add Character</button>
+			<button class="btn-small" id="clear">Clear</button>
 		</div>
-		<div id="adventure-party">
-			<h2 id="party-name">The Apocalypse Gang</h2>
-			<ul id="pc-list">
-			</ul>
-			<button id="saveparty">Save Party</button>
-		</div>
+
+
 	</div>
 
 

@@ -14,15 +14,15 @@
 		<div class="welcome">
 			<div>
 				<h1>monst'r'us</h1>
-				<p>Weclome to the Monst'r'us, the d20 combat manager designed to keep the fun on the table.</p>
+				<p>Welcome to the Monst'r'us, the d20 combat manager designed to keep the fun on the table.</p>
 			</div>
 			<div class="name-new-party">
 				<form>
 					<h4>Start with the name of your adventure party</h4>
 					<p class="gloss">Keep it simple and descriptive, eg. "The Apocolypse Gang"</p>
-					<input type="text">
+					<input type="text" id="new-party-name">
 				</form>
-				<button>Start a party</button>
+				<button id="new-party-btn">Start a party</button>
 			</div>
 		</div>
 
@@ -31,12 +31,12 @@
 			<h3>
 				Your adventure parties:
 			</h3>
-			<div class="party-off">
+			<div id="party-off">
 				<p class="intro">
 					You currently have no adventure parties set up. 
 				</p>
 			</div>
-			<div class="party-on">
+			<div id="party-on">
 				<p class="intro">
 					Select the party for your game.
 				</p>
@@ -59,6 +59,6 @@
 
 	
 	
-<script defer src="add-char-script.js"></script>
+<script defer src="setup-1-script.js"></script>
 </body>
 </html>

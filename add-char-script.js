@@ -4,12 +4,31 @@ const sumbitBtn = document.getElementById('add-pc-btn');
 const clearBtn = document.getElementById('clear-btn');
 const testBtn = document.getElementById('test-button');
 const pcList = document.getElementById('pc-list');
+const partyNameBox = document.getElementById('party-name');
+const pcMaker = document.getElementById('pc-maker');
+const makePcBtn = document.getElementById('make-pc-btn');
+const noParty = document.getElementById('no-party');
+
 
 let party = [];
-let partyName = "";
+let partyName = window.localStorage.getItem('selected');
 
-function newParty () {
-    partyName = "Apocolypse";
+
+
+function setUp () {
+    partyNameBox.textContent = partyName;
+
+    if (party.length < 1) {
+        noParty.style.visibility = 'visible';
+    }
+
+}
+
+
+window.onload = setUp ();
+
+function showForm () {
+    pcMaker.style.visibility = 'visible';
 }
 
 function addPc(e) {
@@ -30,16 +49,20 @@ function addPc(e) {
             'pcAC': document.getElementById('pc-ac').value
         })
 
-        let newPc = document.createElement('li'); //create 
+        noParty.style.display = 'none';
+
+        //make a new li with the name
+        let newPc = document.createElement('li'); 
         newPc.className = "name";
         newPc.appendChild(document.createTextNode(newPcName));
         pcList.appendChild(newPc);
         
-        //pcList.li.innerText = document.getElementById('pc-name').value;
+        //reset form & hide it.
 
         document.getElementById('add-pc-form').reset();
+        pcMaker.style.visibility = 'hidden';
 
-    
+        window.localStorage.setItem( partyName, JSON.stringify(party))
 
     }
    
@@ -53,6 +76,7 @@ function testThis() {
     console.log(party);
 }
 
+makePcBtn.addEventListener("click", showForm);
 sumbitBtn.addEventListener("click", addPc);
 
 testBtn.addEventListener("click", testThis );
