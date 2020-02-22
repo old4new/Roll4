@@ -39,11 +39,10 @@ p {
 .main-container {
   display: -ms-grid;
   display: grid;
-  height: 100vw;
   -ms-grid-columns: 67% 33%;
       grid-template-columns: 67% 33%;
-  -ms-grid-rows: 0px auto;
-      grid-template-rows: 0px auto;
+  -ms-grid-rows: 10px 100vh;
+      grid-template-rows: 10px 100vh;
 }
 
 .welcome {
@@ -54,6 +53,74 @@ p {
       grid-row-start: 2;
   grid-row-end: 3;
   padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.welcome h1 {
+  background: -webkit-linear-gradient(#eee, black);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.welcome p {
+  text-align: center;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 4rem;
+}
+
+.name-new-party {
+  background-color: #101010;
+  border: 1px solid #777;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 67%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.name-new-party h4 {
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+.name-new-party p {
+  color: #777;
+  font-family: "Assistant", sans-serif;
+  margin: .5rem;
+}
+
+.name-new-party form input {
+  text-align: center;
+  font-family: "Bree Serif", serif;
+  margin: 1rem;
+  padding: .5rem;
+  font-size: 1.25rem;
+  width: 80%;
 }
 
 .party-list {
@@ -65,6 +132,20 @@ p {
   grid-row-end: 3;
   background-color: #101010;
   padding: 3rem;
+}
+
+li.party-names {
+  list-style-type: none;
+  margin: .5rem;
+}
+
+li.party-names a {
+  display: block;
+  background-color: #202020;
+  padding: .5rem;
+  font-family: "Assistant", sans-serif;
+  text-decoration: none;
+  color: white;
 }
 
 form label {

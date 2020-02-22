@@ -3,6 +3,7 @@
 
 $dark-grey: #151515;
 $dark-grey2: #101010;
+$dark-grey3: #202020;
 $mid-grey: #777;
 $light-grey1: #eee;
 $light-grey2: #ccc;
@@ -50,9 +51,9 @@ p {
 
 .main-container {
 	display: grid;
-	height: 100vw;
+	
 	grid-template-columns: 67% 33%;
-	grid-template-rows:	0px auto;
+	grid-template-rows:	10px 100vh;
 }
 
 .welcome {
@@ -61,6 +62,60 @@ p {
 	grid-row-start: 2;
 	grid-row-end: 3;
 	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	// h1{
+	// 	background: -webkit-linear-gradient(#eee, black);
+  	// 	-webkit-background-clip: text;
+  	// 	-webkit-text-fill-color: transparent
+	// }
+
+	p{
+		text-align: center;
+		font-weight: 300;
+		color: white;
+		margin-bottom: 4rem;
+	}
+
+	
+
+}
+
+.name-new-party {
+	background-color: $dark-grey2;
+	border: 1px solid $mid-grey;
+	border-radius: 1rem;
+	padding: 2rem;
+	width: 67%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	h4 {
+		color: white;
+		text-align: center;
+		margin: 0;
+	}
+
+	p {
+		color: $mid-grey;
+		font-family: $sans;
+		margin: .5rem;
+
+	}
+
+	form input {
+		text-align: center;
+		font-family: $main-font;
+		margin: 1rem;
+		padding: .5rem;
+		font-size: 1.25rem;
+		width: 80%;
+	}
 }
 
 .party-list {
@@ -72,13 +127,33 @@ p {
 	background-color: $dark-grey2;
 	padding: 3rem;
 
-
-
 	
 }
 
+li.party-names {
+	list-style-type: none;
+	margin: .5rem;
+
+	
+	a {
+		display: block;
+		background-color: pink;
+		padding: 1rem;
+		font-family: $sans;
+		text-decoration: none;
+		color: $llight-grey2;
+	}
+
+	a:hover {
+		background-color: pink;
+		color: white;
+	}
+}
+ 
+
+
 form label {
-	color: $light-grey1;
+	color: $light-grey2;
 }
 
 .form-box {
