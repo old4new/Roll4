@@ -4,45 +4,54 @@
 <meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css?family=Assistant:400,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Creepster&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="styles.css">	
 <title>Monster maker</title>
 </head>
 
 <body>
-	<h1>d20 monster wrangler</h1>
-	<div id="party-box">
-		<div id="pc-maker">
-			<h2>Add a PC</h2>
-			<form id="add-pc-form" >
+	<div class="header">
+		<h2>Fight Setup</h2>
+		<p>Pick the monsters for the fight, and save it for the next time you run this adventure, even with a different adventure party.</p>
+	</div>
+
+	<div id="fight-box">
+		<div id="monster-menu">
+			<h3>Your Monster Menu:</h3>
+			<p>Pick from these monster types, or add a new one.</p>
+			<ul class="your-monsters">
+				<li><a href="#">Goblin</a></li>
+				<li><a href="#">Orc</a></li>
+				<li><a href="#">Hobgoblin</a></li>
+				<li><a href="#">Doppleganger</a></li>
+				<li><a href="#">Ancient Red</a></li>
+				<li><a href="#">DarkMantle</a></li>
+
+			</ul>	
+		</div>
+		<div id="monster-maker">
+			<h2>Add a Monster</h2>
+			<form id="add-monster-form" >
 				<!-- action="#" method="post" --><!--include this inside the FORM tag-->
+
 				<div class="form-box">
-					<label for="pc-name">Name</label>
-					<input type="text" id="pc-name">
+					<label for="monster-type">Monster Type</label>
+					<input type="text" id="monster-type">
 				</div>
 
 				<div class="form-box">
-					<label for="pc-class">Class</label>
-					<input type="text" id="pc-class">
+					<label for="monstser-maxhp">Max HP</label>
+					<input type="text" id="monstser-maxhp">
 				</div>
 
 				<div class="form-box">
-					<label for="pc-level">Level</label>
-					<input type="text" id="pc-level">
+					<label for="monster-init-mod">Initiative Modifier</label>
+					<input type="text" id="monster-init-mod">
 				</div>
 
 				<div class="form-box">
-					<label for="pc-maxhp">Max HP</label>
-					<input type="text" id="pc-maxhp">
-				</div>
-
-				<div class="form-box">
-					<label for="pc-init-mod">Initiative Modifier</label>
-					<input type="text" id="pc-init-mod">
-				</div>
-
-				<div class="form-box">
-					<label for="pc-ac">Armour Class</label>
-					<input type="text" id="pc-ac">
+					<label for="monster-ac">Armour Class</label>
+					<input type="text" id="monster-ac">
 				</div>
 
 
@@ -50,17 +59,21 @@
 			</form>
 			   
 			<div class="form-box">
-				<button id="add-pc-btn">Add Character</button>
+				<button id="add-monster-btn">Add Character</button>
 				<button class="btn-small" id="clear">Clear</button>
 			</div>
 
 
 		</div>
-		<div id="adventure-party">
-			<h2 id="party-name">The Apocalypse Gang</h2>
-			<ul id="pc-list">
+		<div id="monstser-combatants">
+			<h2 id="fight-name">Cragmaw Castle 15</h2>
+			<p class="tags"><span class="tag">Phandalin</span> <span class="tag">Boss Fight</span></p>
+			<ul id="monster-list">
+				<li><a href="#">Goblin</a></li>
+				<li><a href="#">Orc</a></li>
+				<li><a href="#">Ancient Red Dragon</a></li>
 			</ul>
-			<button id="saveparty">Save Party</button>
+			<button id="save-fight">Save Party</button>
 		</div>
 	</div>
 
@@ -76,6 +89,6 @@
 
 	
 	
-<script defer src="add-char-script.js"></script>
+<!-- <script defer src="add-monster-script.js"></script> -->
 </body>
 </html>

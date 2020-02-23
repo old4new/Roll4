@@ -52,12 +52,26 @@ p {
 	font-weight: 300;
 }
 
+.skip {
+	display: block;
+	margin-top: 6rem;
+}
+
+a {
+	text-decoration: none;
+	color: $mid-grey;
+}
+a:hover {
+	color: $spot-color-highlight;
+}
+
 .main-container {
 	display: grid;
 	
 	grid-template-columns: 67% 33%;
 	grid-template-rows:	10px 100vh;
 }
+
 
 .welcome {
 	grid-column-start: 1;

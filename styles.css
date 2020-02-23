@@ -36,6 +36,20 @@ p {
   font-weight: 300;
 }
 
+.skip {
+  display: block;
+  margin-top: 6rem;
+}
+
+a {
+  text-decoration: none;
+  color: #777;
+}
+
+a:hover {
+  color: #fe5101;
+}
+
 .main-container {
   display: -ms-grid;
   display: grid;
