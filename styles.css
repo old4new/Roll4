@@ -1,9 +1,10 @@
 /* Scss Document */
-@import url(/Users/pauloleary/Google Drive/web/Roll4/normalize.css);
+@import url(/Users/murraycreative/Google Drive/web/Roll4/normalize.css);
 body {
   font-family: "Bree Serif", serif;
   background-color: #151515;
   color: #777;
+  margin: 0;
 }
 
 h1 {
@@ -257,6 +258,80 @@ form label {
 .buttons {
   width: 33%;
   margin: 2rem auto;
+}
+
+#monster-main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 6rem 90vh 3rem;
+      grid-template-rows: 6rem 90vh 3rem;
+  margin: 0;
+}
+
+#monster-main .header {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: orange;
+}
+
+input.number {
+  width: 1rem;
+  text-align: center;
+}
+
+#monster-menu {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 2;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: pink;
+}
+
+.monster-maker {
+  position: fixed;
+  width: 50vw;
+  height: 100vh;
+  top: 0;
+  background-color: #777;
+  z-index: 100;
+  left: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform .3s 0s;
+  transition: -webkit-transform .3s 0s;
+  transition: transform .3s 0s;
+  transition: transform .3s 0s, -webkit-transform .3s 0s;
+}
+
+.show-monster-maker {
+  -webkit-transition: -webkit-transform .5s 0s;
+  transition: -webkit-transform .5s 0s;
+  transition: transform .5s 0s;
+  transition: transform .5s 0s, -webkit-transform .5s 0s;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+a.close-btn {
+  width: 4rem;
+  display: block;
+  background-color: #cf5813;
+  padding: 1rem;
+  text-decoration: none;
+  color: white;
+}
+
+a.close-btn:hover {
+  background-color: #fe5101;
+  color: black;
 }
 
 .combatant {

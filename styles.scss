@@ -19,6 +19,7 @@ body {
 	font-family: $main-font;
 	background-color: $dark-grey;
 	color: $mid-grey;
+	margin: 0;
 }
 
 
@@ -250,9 +251,66 @@ form label {
 }
 
 
+#monster-main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 6rem 90vh 3rem;
+	margin:0;
+
+	.header {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		grid-row-start: 1;
+		grid-row-end: 2;
+		background-color: orange;
+	}
+}
 
 
+input.number {
+	width: 1rem;
+	text-align: center;
+}
 
+#monster-menu {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	background-color: pink;
+}
+
+.monster-maker {
+	position: fixed;
+	width: 50vw;
+	height: 100vh;
+	top: 0;
+	background-color: $mid-grey;
+	z-index: 100;
+	left:0;
+	transform: translateX(-100%);
+	transition: transform .3s 0s;
+}
+
+.show-monster-maker {
+	transition: transform .5s 0s;
+	transform: translateX(0);
+	//background-color: red;
+}
+
+a.close-btn {
+	width: 4rem;
+	display: block;
+	background-color: $spot-color;
+	padding: 1rem;
+	text-decoration: none;
+	color: white;
+}
+
+a.close-btn:hover {
+	background-color: $spot-color-highlight;
+	color: black;
+}
 
 .combatant {
 	width: 80%;
