@@ -1,5 +1,5 @@
 /* Scss Document */
-@import url(/Users/murraycreative/Google Drive/web/Roll4/normalize.css);
+@import url(/Users/pauloleary/Google Drive/web/Roll4/normalize.css);
 body {
   font-family: "Bree Serif", serif;
   background-color: #151515;
@@ -58,6 +58,147 @@ a:hover {
       grid-template-columns: 67% 33%;
   -ms-grid-rows: 10px 100vh;
       grid-template-rows: 10px 100vh;
+}
+
+ul li {
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  background-color: black;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+}
+
+header h2 {
+  font-family: "Creepster";
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 2rem;
+}
+
+header nav li {
+  list-style-type: none;
+}
+
+header nav li a {
+  text-align: center;
+  font-family: "Assistant", sans-serif;
+  text-transform: uppercase;
+}
+
+header #menu {
+  background-color: #cf5813;
+  font-family: "Assistant", sans-serif;
+  font-size: 1rem;
+  letter-spacing: .25em;
+  padding: 1rem;
+  margin: 0;
+}
+
+header #menu a {
+  color: white;
+}
+
+header #menu:hover {
+  background-color: #fe5101;
+}
+
+header #menu:hover a {
+  color: black;
+}
+
+.nav-screen {
+  position: fixed;
+  z-index: 150;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background-color: #cf5813;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.nav-screen ul {
+  width: 20%;
+  margin: auto;
+}
+
+.nav-screen li {
+  list-style-type: none;
+}
+
+.nav-screen li a {
+  display: block;
+  color: black;
+  font-family: "Assistant", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  padding: 1rem;
+  text-align: center;
+  margin: .25rem;
+}
+
+.nav-screen li:hover a {
+  background-color: #151515;
+  color: #fe5101;
+}
+
+.nav-screen .close-btn {
+  background-color: #151515;
+}
+
+.nav-screen .close-btn:hover {
+  background-color: #fe5101;
+  color: #151515;
+}
+
+.show-nav-panel {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .welcome {
@@ -270,14 +411,24 @@ form label {
   margin: 0;
 }
 
-#monster-main .header {
+#monster-main .title {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 3;
   -ms-grid-row: 1;
       grid-row-start: 1;
   grid-row-end: 2;
-  background-color: orange;
+  padding: 0;
+}
+
+#monster-main .title h2 {
+  text-align: center;
+  margin: .25rem 0;
+}
+
+#monster-main .title p {
+  text-align: center;
+  margin: 0;
 }
 
 input.number {
@@ -292,15 +443,141 @@ input.number {
   -ms-grid-row: 2;
       grid-row-start: 2;
   grid-row-end: 3;
-  background-color: pink;
+  background-color: black;
+  padding: 3rem;
+}
+
+#monster-menu h3 {
+  margin: 0;
+}
+
+#monster-menu p {
+  margin: 0;
+  font-weight: 300;
+}
+
+#monster-menu ul {
+  margin: 2rem 0;
+}
+
+#monster-menu li {
+  list-style-type: none;
+  margin: .5rem 0;
+}
+
+#monster-menu li a {
+  padding: .25rem 0;
+  font-family: "Assistant", sans-serif;
+  text-decoration: none;
+  color: #ccc;
+}
+
+#monster-menu li a:hover {
+  color: white;
+}
+
+.monster-menu-item-selected {
+  background-color: #202020;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: .5rem;
+}
+
+.monster-menu-item-selected p {
+  display: block;
+  font-family: "Assistant", sans-serif;
+  color: #ccc;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.monster-menu-item-selected input {
+  width: 2rem;
+  margin-left: .5rem;
+  text-align: right;
+}
+
+.monster-menu-item-selected button {
+  display: block;
+  font-size: 2rem;
+  font-family: "Assistant", sans-serif;
+  padding: 0 .75rem;
+  color: white;
+}
+
+.monster-menu-item {
+  background-color: none;
+}
+
+.monster-menu-item p {
+  display: none;
+}
+
+.monster-menu-item button {
+  display: none;
+}
+
+#monster-combatants {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: #202020;
+  padding: 3rem;
+}
+
+#monster-combatants h3 {
+  margin: 0;
+}
+
+#monster-combatants p {
+  margin: 0;
+  font-weight: 300;
+}
+
+#monster-combatants ul {
+  margin: 2rem 0;
+}
+
+#monster-combatants li {
+  color: #151515;
+  margin: .25rem 0;
+}
+
+.tag {
+  font-family: "Assistant", sans-serif;
+  background: #777;
+  color: #151515;
+  font-size: .75rem;
+  letter-spacing: 0.05em;
+  padding: .125em .5em .25em;
+  border-radius: .25em;
 }
 
 .monster-maker {
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 50vw;
   height: 100vh;
   top: 0;
-  background-color: #777;
+  background-color: #eee;
   z-index: 100;
   left: 0;
   -webkit-transform: translateX(-100%);
@@ -309,6 +586,58 @@ input.number {
   transition: -webkit-transform .3s 0s;
   transition: transform .3s 0s;
   transition: transform .3s 0s, -webkit-transform .3s 0s;
+}
+
+.monster-maker h2 {
+  margin: 4rem auto 1rem;
+  color: #151515;
+}
+
+.monster-maker form {
+  margin: 0rem auto;
+}
+
+.monster-maker .form-box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 200px;
+      grid-template-columns: auto 200px;
+  grid-gap: 10px;
+}
+
+.monster-maker .form-box label {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  color: #151515;
+}
+
+.monster-maker .form-box input {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+}
+
+.monster-maker input[type=number] {
+  width: 2rem;
+  text-align: right;
+}
+
+.monster-maker .form-buttons {
+  margin: 2rem auto 0;
+}
+
+.close-btn-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .show-monster-maker {
@@ -321,12 +650,16 @@ input.number {
 }
 
 a.close-btn {
-  width: 4rem;
-  display: block;
+  font-family: "Assistant", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: .75rem;
+  display: inline-block;
   background-color: #cf5813;
   padding: 1rem;
   text-decoration: none;
   color: white;
+  text-align: right;
 }
 
 a.close-btn:hover {
@@ -417,10 +750,5 @@ button:hover {
   margin: 2rem;
   padding: 1rem;
   background-color: pink;
-}
-
-ul li {
-  color: white;
-  text-decoration: none;
 }
 /*# sourceMappingURL=styles.css.map */
