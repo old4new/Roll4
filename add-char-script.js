@@ -11,17 +11,18 @@ const noParty = document.getElementById('no-party');
 const yesParty = document.getElementById('yes-party');
 const nextMakeFightBtn = document.getElementById('next-make-fight');
 
-//let partyName = window.localStorage.getItem('selected party');
+let partyName = window.localStorage.getItem('selected party');
 //let party = JSON.parse(window.localStorage.getItem(partyName));
 let party = [];
 
 function setUp () {
-    partyNameBox.textContent = partyName; 
-
     let getParty = JSON.parse(window.localStorage.getItem(partyName));
+    partyNameBox.textContent = partyName;
+    console.log(getParty);
 
-    console.log(`${partyName}: ${party}`);
-    if (party != null ) {
+    if (getParty != null ) {
+
+        party = [...getParty];
 
         for (let i = 0; i < party.length; i++){
             let memberName = party[i][0];
