@@ -5,12 +5,14 @@ const rollButton = document.getElementById('roller');
 const sortButton = document.getElementById('sort');
 const testButton = document.getElementById('testButton');
 const initiativeBox = document.getElementById('initiative-box');
+const nextTurnButton = document.getElementById('next');
 
 let combatantDivs = [];
 let nameBoxArr = [];
 let rollBoxArr = [];
 let detailBoxArr = [];
 let combatants = [];
+let combatantOrderList = [];
 
 //step 1: load the party list & the monster list
 
@@ -144,13 +146,26 @@ window.onload = setUp;
 
 function sortCombatOrder(){
 	// sort array
-	combatants.sort((a, b) => b.initiative - a.initiative);
 
-	for (var i = 0; i < combatants.length; i++) {
-		combatants[i].comBox.style.order = i;
-	}
+	// create a SORTER array matching the Combatants initiatives matched with their index
+	combatants.forEach(function(item, index){
+		combatantOrderList.push([item.initiative, index]);
+	} );
+
+	//sort the SORTER array
+	combatantOrderLIst.sort((a, b) => b[0] - a[0]);
+
+	//Use the SORTER array to tell the COMBATANTS their order
+	// this method doesn't reorder the COMBATANTS array
+	// which allows the PCs to edit their rolls after an initial sort
+
+	combatantOrderList.forEach(function (item, index){
+		combatants[item[1]].comBox.style.order = index;
+	})
+	
 
 }
+
 
 
 
@@ -177,10 +192,11 @@ function quickTest () {
 function enterInitiative (e) {
 	//does this need an if statement???
 	if (e.target.classList.contains('roll')) { 
-		let realDiceRoll = e.target.innerText;
+		let realDiceRoll = Number(e.target.innerText);
 		let findId = e.target.id.substr(7);
+		console.log(findId);
 		combatants[findId].initiative = realDiceRoll;
-		//console.log(`${combatants[findId].name} : ${combatants[findId].initiative}`); 
+		console.log(`${combatants[findId].name} : ${combatants[findId].initiative}`); 
 
 		/* 	this is detected via the DOM, reading the HTML on the page. 
 			The combatant arrays/classes  WRITE the DOM

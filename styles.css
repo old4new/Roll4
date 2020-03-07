@@ -71,6 +71,7 @@ button {
   padding: .75em 1em;
   background-color: #cf5813;
   border: none;
+  margin: 0 .25rem;
 }
 
 button:hover {
@@ -84,9 +85,13 @@ button:hover {
   background-color: #151515;
 }
 
-#sort {
-  background-color: black;
-  color: white;
+#sort, #next {
+  background-color: #ccc;
+  color: #cf5813;
+}
+
+#sort:hover, #next:hover {
+  background-color: white;
 }
 
 #test-button {
@@ -457,6 +462,16 @@ form label {
 .buttons {
   width: 33%;
   margin: 2rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #monster-main {
@@ -740,7 +755,7 @@ a.close-btn:hover {
           justify-content: space-between;
   margin: .25rem auto;
   padding: .25rem;
-  background-color: #eee;
+  background-color: #ccc;
 }
 
 .combatant h4.name {
@@ -777,7 +792,11 @@ a.close-btn:hover {
 }
 
 .pc {
-  background-color: #777;
+  background-color: #999;
+}
+
+.my-turn {
+  background-color: white;
 }
 
 #fight-page-main-container {

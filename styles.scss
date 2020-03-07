@@ -8,6 +8,7 @@ $dark-grey4: #2c2c2c;
 $mid-grey: #777;
 $light-grey1: #eee;
 $light-grey2: #ccc;
+$light-grey3: #999;
 $spot-color-highlight: #fe5101;
 $spot-color: #cf5813;
 
@@ -87,6 +88,7 @@ button {
 	padding: .75em 1em;
 	background-color: $spot-color;
 	border: none;
+	margin: 0 .25rem;
 }
 
 button:hover {
@@ -100,9 +102,13 @@ button:hover {
 	background-color: $dark-grey;
 }
 
-#sort {
-	background-color: black;
-    color: white;
+#sort, #next {
+	background-color: $light-grey2;
+    color: $spot-color;
+}
+
+#sort:hover, #next:hover {
+	background-color: white;
 }
 
 #test-button {
@@ -426,6 +432,9 @@ form label {
 .buttons {
 	width: 33%;
 	margin: 2rem auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
 
@@ -687,7 +696,7 @@ a.close-btn:hover {
 	margin: .25rem auto ;
 	padding: .25rem;
 
-	background-color: $light-grey1;
+	background-color: $light-grey2;
 	
 	h4.name {
 		margin: 0;
@@ -725,7 +734,11 @@ a.close-btn:hover {
 }
 
 .pc {
-	background-color: $mid-grey;
+	background-color: $light-grey3;
+}
+
+.my-turn {
+	background-color: white;
 }
 
 
