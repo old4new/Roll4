@@ -7,9 +7,9 @@ const partyOn = document.getElementById('party-on');
 const noParties = document.getElementById('party-off');
 
 let parties = JSON.parse(window.localStorage.getItem('party list'));
-
+//remove duplicates
+parties = Array.from(new Set([...parties]));
 console.log(parties);
-//let parties =[];
 let selectedParty = '';
 
 function setUpPartyList () {
@@ -20,16 +20,17 @@ function setUpPartyList () {
 
 
         for (let i=0; i < parties.length; i++) {
-            writePartyLink(parties[i]);
+            writePartyLink(parties[i], i);
         }
 
     }
 
 }
 
-function writePartyLink(partyName) {
+function writePartyLink(partyName, pos) {
     let newPartyLi = document.createElement('li');
     newPartyLi.className = 'party-names';
+    newPartyLi.id = `party-index-${pos}`;
     let newPartyLink = document.createElement('a');
     newPartyLink.href = "#";
     newPartyLink.appendChild(document.createTextNode(partyName));
@@ -41,10 +42,20 @@ function writePartyLink(partyName) {
 function addPartyName () {
     let newName = partyNameField.value;
     parties.push(newName);
-    console.log(parties);
+    parties = Array.from(new Set([...parties]));
     window.localStorage.setItem("party list", JSON.stringify(parties));
-    window.localStorage.setItem("selected", newName);
+    window.localStorage.setItem("selected party", newName);
     window.location.href = "pc.html";
+}
+
+function selectParty (e) {
+    let targetItem = e.target.parentElement;
+    if (targetItem.classList.contains('party-names')){
+        let partyIndex = targetItem.id.substr(12);
+        window.localStorage.setItem("selected party", parties[partyIndex]);
+        console.log(parties[partyIndex]);
+        window.location = 'pc.html';
+    }
 }
 
 
@@ -53,4 +64,4 @@ window.onload = setUpPartyList;
 
 
 newPartyBtn.addEventListener("click", addPartyName );
-
+listOfParties.addEventListener("click", selectParty);

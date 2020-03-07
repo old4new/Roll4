@@ -55,7 +55,7 @@ p {
 
 .skip {
 	display: block;
-	margin-top: 6rem;
+	margin-top: 3rem;
 }
 
 a {
@@ -80,6 +80,40 @@ ul {
 		text-decoration: none;
 	}
 }
+
+button {
+	font-family: 'Bree Serif', serif;
+	font-size: .75rem;
+	padding: .75em 1em;
+	background-color: $spot-color;
+	border: none;
+}
+
+button:hover {
+	background-color: $spot-color-highlight;
+}
+
+.btn-small {
+	color: $mid-grey;
+	font-family: $sans;
+	font-size: .75rem;
+	background-color: $dark-grey;
+}
+
+#sort {
+	background-color: black;
+    color: white;
+}
+
+#test-button {
+	display: block;
+	margin:2rem;
+	padding: 1rem;
+	background-color: pink;
+	
+}
+
+
 
 
 header {
@@ -215,7 +249,7 @@ header {
 
 }
 
-.name-new-party {
+.name-new-party, .name-new-fight {
 	background-color: $dark-grey2;
 	border: 1px solid $mid-grey;
 	border-radius: 1rem;
@@ -267,7 +301,7 @@ ul {
 	padding: 0;
 }
 
-li.party-names {
+li.party-names, li.fight-name {
 	list-style-type: none;
 	margin: .5rem 0;
 
@@ -284,6 +318,14 @@ li.party-names {
 	a:hover {
 		background-color: $dark-grey4;
 		color: white;
+	}
+	
+}
+
+li .party-names .selected-party {
+	a{
+		background-color: $light-grey1;
+		color: $dark-grey;
 	}
 }
 
@@ -306,7 +348,11 @@ li.name {
 		background-color: $dark-grey4;
 		color: white;
 	}
+
+	
 }
+
+
  
 
 
@@ -319,32 +365,51 @@ form label {
 }
 
 #party-box {
-	width: 80%;
+	width: 100%;
 	margin: auto;
 	background-color: black;
 	display: grid;
-	grid-template-columns: 50px 1fr 1fr 50px;
+	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 50px 1fr 50p;
 	grid-gap: 2rem;
 }
-#pc-maker {
-	visibility: hidden; 
-	width: 100%;
-	grid-column-start: 2 ;
-	grid-column-end: 3;
-	grid-row-start: 2;
-	grid-row-end: 3;
-}
+
 
 #adventure-party {
+	padding: 2rem 3rem;
 	//background-color: pink; 
-	grid-column-start: 3 ;
-	grid-column-end: 4;
-	grid-row-start: 2;
-	grid-row-end: 3;
+	grid-column: 1 / 2 ;
+	grid-row: 2 / 3;
 
 }
 
+
+
+.pc-maker {
+	padding: 2rem 3rem;
+	background-color: $light-grey1;
+	//visibility: hidden; 
+	width: 100%;
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+	transform: translateX(101%);
+	transition: transform 0.3s ease-out;
+
+	h2 {
+		color: $dark-grey;
+	}
+
+	
+
+
+}
+
+.show-pc-maker {
+	visibility: visible;
+	transition: transform 0.3s ease-out;
+	transform: translateX(0);
+
+}
 
 
 #initiative-box {
@@ -535,8 +600,8 @@ input.number {
 	background-color: $light-grey1;
 	z-index: 100;
 	left:0;
-	transform: translateX(-100%);
-	transition: transform .3s 0s;
+	transform: translateX(-102%);
+	transition: transform .3s 0s ease-in;
 
 	h2 {
 		margin: 4rem auto 1rem;
@@ -548,11 +613,12 @@ input.number {
 	}
 
 	.form-box {
+		width: 80%;
 		display: grid;
 		grid-template-columns: auto 200px;
 		grid-gap: 10px;
-
-
+	
+	
 		label {
 			grid-column: 1 / 2;
 			color: $dark-grey;
@@ -561,18 +627,22 @@ input.number {
 		input {
 			grid-column: 2 / 3;
 		}
-
+	
+		input[type=number] {
+			width: 2rem;
+			text-align: right;
+		}
+	
 	}
-
-	input[type=number] {
-		width: 2rem;
-		text-align: right;
-	}
+	
 
 	.form-buttons {
 		margin: 2rem auto 0;
 	}
 }
+
+
+
 
 .close-btn-div {
 	display: flex;
@@ -581,7 +651,7 @@ input.number {
 }
 
 .show-monster-maker {
-	transition: transform .5s 0s;
+	transition: transform .5s 0s ease-in;
 	transform: translateX(0);
 	//background-color: red;
 }
@@ -659,36 +729,24 @@ a.close-btn:hover {
 }
 
 
-
-button {
-	font-family: 'Bree Serif', serif;
-	font-size: .75rem;
-	padding: .75em 1em;
-	background-color: $spot-color;
-	border: none;
+#fight-page-main-container {
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	grid-template-rows: 1vh;
+	grid-gap: 2rem;
 }
 
-button:hover {
-	background-color: $spot-color-highlight;
+#fight-list-panel {
+	width: 100%;
+	grid-column: 1 / 2;
+	padding: 2rem ;
 }
 
-.btn-small {
-	color: $mid-grey;
-	font-family: $sans;
-	font-size: .75rem;
-	background-color: $dark-grey;
-}
+#new-fight-name-panel {
+	grid-column: 2 / 3;
+	padding: 2rem ;
 
-#sort {
-	background-color: black;
-    color: white;
+	h4 {
+		color: white;
+	}
 }
-
-#test-button {
-	display: block;
-	margin:2rem;
-	padding: 1rem;
-	background-color: pink;
-	
-}
-

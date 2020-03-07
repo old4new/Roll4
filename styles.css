@@ -39,7 +39,7 @@ p {
 
 .skip {
   display: block;
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 
 a {
@@ -63,6 +63,37 @@ a:hover {
 ul li {
   color: white;
   text-decoration: none;
+}
+
+button {
+  font-family: 'Bree Serif', serif;
+  font-size: .75rem;
+  padding: .75em 1em;
+  background-color: #cf5813;
+  border: none;
+}
+
+button:hover {
+  background-color: #fe5101;
+}
+
+.btn-small {
+  color: #777;
+  font-family: "Assistant", sans-serif;
+  font-size: .75rem;
+  background-color: #151515;
+}
+
+#sort {
+  background-color: black;
+  color: white;
+}
+
+#test-button {
+  display: block;
+  margin: 2rem;
+  padding: 1rem;
+  background-color: pink;
 }
 
 header {
@@ -237,7 +268,7 @@ header #menu:hover a {
   margin-bottom: 4rem;
 }
 
-.name-new-party {
+.name-new-party, .name-new-fight {
   background-color: #101010;
   border: 1px solid #777;
   border-radius: 1rem;
@@ -258,19 +289,19 @@ header #menu:hover a {
           align-items: center;
 }
 
-.name-new-party h4 {
+.name-new-party h4, .name-new-fight h4 {
   color: white;
   text-align: center;
   margin: 0;
 }
 
-.name-new-party p {
+.name-new-party p, .name-new-fight p {
   color: #777;
   font-family: "Assistant", sans-serif;
   margin: .5rem;
 }
 
-.name-new-party form input {
+.name-new-party form input, .name-new-fight form input {
   text-align: center;
   font-family: "Bree Serif", serif;
   margin: 1rem;
@@ -299,12 +330,12 @@ ul {
   padding: 0;
 }
 
-li.party-names {
+li.party-names, li.fight-name {
   list-style-type: none;
   margin: .5rem 0;
 }
 
-li.party-names a {
+li.party-names a, li.fight-name a {
   display: block;
   background-color: #202020;
   padding: .5rem;
@@ -313,9 +344,14 @@ li.party-names a {
   color: #ccc;
 }
 
-li.party-names a:hover {
+li.party-names a:hover, li.fight-name a:hover {
   background-color: #2c2c2c;
   color: white;
+}
+
+li .party-names .selected-party a {
+  background-color: #eee;
+  color: #151515;
 }
 
 li.name {
@@ -346,36 +382,58 @@ form label {
 }
 
 #party-box {
-  width: 80%;
+  width: 100%;
   margin: auto;
   background-color: black;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50px 1fr 1fr 50px;
-      grid-template-columns: 50px 1fr 1fr 50px;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 50px 1fr 50p;
       grid-template-rows: 50px 1fr 50p;
   grid-gap: 2rem;
 }
 
-#pc-maker {
-  visibility: hidden;
-  width: 100%;
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  grid-column-end: 3;
+#adventure-party {
+  padding: 2rem 3rem;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
   -ms-grid-row: 2;
-      grid-row-start: 2;
-  grid-row-end: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
 }
 
-#adventure-party {
-  -ms-grid-column: 3;
-      grid-column-start: 3;
-  grid-column-end: 4;
+.pc-maker {
+  padding: 2rem 3rem;
+  background-color: #eee;
+  width: 100%;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
   -ms-grid-row: 2;
-      grid-row-start: 2;
-  grid-row-end: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  -webkit-transform: translateX(101%);
+          transform: translateX(101%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.pc-maker h2 {
+  color: #151515;
+}
+
+.show-pc-maker {
+  visibility: visible;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 #initiative-box {
@@ -580,12 +638,12 @@ input.number {
   background-color: #eee;
   z-index: 100;
   left: 0;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  -webkit-transition: -webkit-transform .3s 0s;
-  transition: -webkit-transform .3s 0s;
-  transition: transform .3s 0s;
-  transition: transform .3s 0s, -webkit-transform .3s 0s;
+  -webkit-transform: translateX(-102%);
+          transform: translateX(-102%);
+  -webkit-transition: -webkit-transform .3s 0s ease-in;
+  transition: -webkit-transform .3s 0s ease-in;
+  transition: transform .3s 0s ease-in;
+  transition: transform .3s 0s ease-in, -webkit-transform .3s 0s ease-in;
 }
 
 .monster-maker h2 {
@@ -598,6 +656,7 @@ input.number {
 }
 
 .monster-maker .form-box {
+  width: 80%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto 200px;
@@ -618,7 +677,7 @@ input.number {
   grid-column: 2 / 3;
 }
 
-.monster-maker input[type=number] {
+.monster-maker .form-box input[type=number] {
   width: 2rem;
   text-align: right;
 }
@@ -641,10 +700,10 @@ input.number {
 }
 
 .show-monster-maker {
-  -webkit-transition: -webkit-transform .5s 0s;
-  transition: -webkit-transform .5s 0s;
-  transition: transform .5s 0s;
-  transition: transform .5s 0s, -webkit-transform .5s 0s;
+  -webkit-transition: -webkit-transform .5s 0s ease-in;
+  transition: -webkit-transform .5s 0s ease-in;
+  transition: transform .5s 0s ease-in;
+  transition: transform .5s 0s ease-in, -webkit-transform .5s 0s ease-in;
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
@@ -721,34 +780,32 @@ a.close-btn:hover {
   background-color: #777;
 }
 
-button {
-  font-family: 'Bree Serif', serif;
-  font-size: .75rem;
-  padding: .75em 1em;
-  background-color: #cf5813;
-  border: none;
+#fight-page-main-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 2fr;
+      grid-template-columns: 3fr 2fr;
+  -ms-grid-rows: 1vh;
+      grid-template-rows: 1vh;
+  grid-gap: 2rem;
 }
 
-button:hover {
-  background-color: #fe5101;
+#fight-list-panel {
+  width: 100%;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  padding: 2rem;
 }
 
-.btn-small {
-  color: #777;
-  font-family: "Assistant", sans-serif;
-  font-size: .75rem;
-  background-color: #151515;
+#new-fight-name-panel {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  padding: 2rem;
 }
 
-#sort {
-  background-color: black;
+#new-fight-name-panel h4 {
   color: white;
-}
-
-#test-button {
-  display: block;
-  margin: 2rem;
-  padding: 1rem;
-  background-color: pink;
 }
 /*# sourceMappingURL=styles.css.map */

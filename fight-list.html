@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select a fight</title>
+    <link href="https://fonts.googleapis.com/css?family=Assistant:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">	
+</head>
+<body>
+    <div id="fight-page-main-container">
+        <div id="fight-list-panel">
+            <h2>Your fights</h2>
+            <p id="no-fights">You have no fights set up. Start setting up a fight using the panel on the right.</p>
+            <p id="yes-fights">Choose a fight from the list below or start a new fight on the right. <br>Then you're ready to roll initiative.</p>
+            <ul id="fight-list-ul">
+                <!-- <li class="name"><a href='#'>Phandalin - Cragmaw Castle - room 1</a></li>
+                <li class="name"><a href="#">Lady Lothar - skeleton room</a></li> -->
+            </ul>
+        </div>
+        <div id="new-fight-name-panel">
+		    <div class="name-new-fight">
+		    	<form>
+		    		<h4>Set up a new fight</h4>
+		    		<p class="gloss">Enter the name of the fight here. The more descriptive, the better. eg."Campaign – Location – number"</p>
+		    		<input type="text" id="new-fight-name">
+                </form>
+                <button id="fight-set-up-btn">Set up this fight</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script defer src="setup-fight.js"></script>
+
+</body>
+</html>

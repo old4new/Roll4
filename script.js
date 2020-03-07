@@ -12,25 +12,18 @@ let rollBoxArr = [];
 let detailBoxArr = [];
 let combatants = [];
 
-//step 1: load the party list
-const party = [
-	["Ziggy", "Wizard", 4, 24, 2, 15,],
-	["Varis", "Fighter", 4, 44, 5, 18], 
-	["Dunk", "Barbarian", 4, 50, 3, 17], 
-	["Pippen", "Rogue", 4, 32, 5, 16]
-]
+//step 1: load the party list & the monster list
+
+let getPartyName = window.localStorage.getItem('selected party');
+let party = JSON.parse(window.localStorage.getItem(getPartyName));
+console.log(party);
 
 
-//step 2: load the monster list
 
-const monsters = [
-	["Orc 1", "Orc", 15, 1, 13],
-	["Orc 2", "Orc", 15, 1, 13],
-	["Orc 3", "Orc", 15, 1, 13],
-	["Plink", "Goblin", 7, 2, 15],
-	["Plonk", "Goblin", 7, 2, 15],
-	["Smaug", "Ancient Red Dragon", 546, 0, 22]
-]
+const fightName = window.localStorage.getItem('selected fight');
+const monsters = JSON.parse(window.localStorage.getItem(fightName));
+
+
 
 class pc {
 	constructor (name, pcClass, level, maxHP, initModifier, ac, pos){
@@ -187,7 +180,7 @@ function enterInitiative (e) {
 		let realDiceRoll = e.target.innerText;
 		let findId = e.target.id.substr(7);
 		combatants[findId].initiative = realDiceRoll;
-		console.log(`${combatants[findId].name} : ${combatants[findId].initiative}`); 
+		//console.log(`${combatants[findId].name} : ${combatants[findId].initiative}`); 
 
 		/* 	this is detected via the DOM, reading the HTML on the page. 
 			The combatant arrays/classes  WRITE the DOM
@@ -203,7 +196,7 @@ rollButton.addEventListener( "click", rollInitiative );
 
 sortButton.addEventListener("click", function () { sortCombatOrder() });
 
-testButton.addEventListener("click", quickTest);
+//testButton.addEventListener("click", quickTest);
 
 initiativeBox.addEventListener("input", enterInitiative );
 
