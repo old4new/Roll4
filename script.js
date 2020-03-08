@@ -13,6 +13,7 @@ let rollBoxArr = [];
 let detailBoxArr = [];
 let combatants = [];
 let combatantOrderList = [];
+let whosTurn = 0;
 
 //step 1: load the party list & the monster list
 
@@ -79,6 +80,7 @@ function setUp () {
 	detailBoxArr = document.querySelectorAll('.details');
 	rollBoxArr = document.querySelectorAll('.roll');
 
+	
 
 	// make combatant objects
 
@@ -106,6 +108,8 @@ function setUp () {
 			combatants[it].detailBox.innerHTML = `${combatants[it].monsterType} <strong>HP:</strong>${combatants[it].currentHP} <strong>AC:</strong>${combatants[it].ac}`;
 		}
 	}
+
+	
 }
 
 function makeCombatantDiv (type, idno) {
@@ -147,26 +151,49 @@ window.onload = setUp;
 function sortCombatOrder(){
 	// sort array
 
-	// create a SORTER array matching the Combatants initiatives matched with their index
+	// create an ORDER array matching the Combatants initiatives matched with their index
 	combatants.forEach(function(item, index){
 		combatantOrderList.push([item.initiative, index]);
 	} );
 
-	//sort the SORTER array
-	combatantOrderLIst.sort((a, b) => b[0] - a[0]);
+	//sort the ORDER array
+	combatantOrderList.sort((a, b) => b[0] - a[0]);
 
-	//Use the SORTER array to tell the COMBATANTS their order
+	//Use the ORDER array to tell the COMBATANTS their order
 	// this method doesn't reorder the COMBATANTS array
 	// which allows the PCs to edit their rolls after an initial sort
 
 	combatantOrderList.forEach(function (item, index){
 		combatants[item[1]].comBox.style.order = index;
 	})
-	
 
+	whosTurn = 0;
+
+	showTurn(whosTurn);
+	
 }
 
 
+function nextTurn () {
+	whosTurn++;
+	if (whosTurn>=combatants.length){
+		whosTurn = 0;
+	}
+	showTurn(whosTurn);
+}
+
+function showTurn (turn){
+	let whichCombatant= combatantOrderList[turn][1];
+	console.log(combatants[whichCombatant].name)
+	combatants.forEach(function (item, index){
+		if (index == whichCombatant){
+			combatants[whichCombatant].comBox.classList.add("my-turn");
+		} else {
+			combatants[index].comBox.classList.remove("my-turn");
+		}
+	})
+	
+}
 
 
 function rolld20 () {
@@ -215,4 +242,6 @@ sortButton.addEventListener("click", function () { sortCombatOrder() });
 //testButton.addEventListener("click", quickTest);
 
 initiativeBox.addEventListener("input", enterInitiative );
+
+nextTurnButton.addEventListener("click", nextTurn);
 
