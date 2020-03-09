@@ -6,14 +6,16 @@ const listOfParties = document.getElementById('list-of-parties');
 const partyOn = document.getElementById('party-on');
 const noParties = document.getElementById('party-off');
 
-let parties = JSON.parse(window.localStorage.getItem('party list'));
-//remove duplicates
-parties = Array.from(new Set([...parties]));
+let getParties = JSON.parse(window.localStorage.getItem('party list'));
+
+parties = [];
 console.log(parties);
 let selectedParty = '';
 
 function setUpPartyList () {
-    if (parties.length > 0 ) {
+    if (getParties != null ) {
+        // removes duplicates and commits to the Parties array
+        parties = Array.from(new Set([...getParties]));
         //hide the 'no parties' message
         noParties.style.display = 'none';
         partyOn.style.visibility = 'visible';
